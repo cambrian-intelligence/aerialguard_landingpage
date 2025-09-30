@@ -1,0 +1,124 @@
+IMPORTANT DISCLAIMER AND LEGAL NOTICE
+
+Flying Objects Detection & Tracking System - Prototype Version
+
+==================================================================
+
+COMPANY INFORMATION:
+Cambrian Intelligence SL
+CIF: B87788097
+Website: https://cambrianintelligence.com
+
+==================================================================
+
+1. PROTOTYPE DISCLAIMER
+
+This is a PROTOTYPE VERSION of our flying objects detection and tracking system. While functional, it is an evolving technology that continues to be improved and refined.
+
+IMPORTANT: Under NO circumstances do we guarantee any level of performance, accuracy, or reliability.
+
+What this means in plain language:
+- This system WILL make mistakes
+- It WILL miss objects that are actually there (false negatives)
+- It WILL detect objects that are not actually there (false positives)
+- It may not work properly in all conditions
+- Performance can vary significantly based on environmental factors
+- Users must understand these limitations before deployment
+
+==================================================================
+
+2. NO WARRANTIES OR GUARANTEES
+
+We provide this system "AS IS" without any warranties of any kind, either express or implied, including but not limited to:
+- Fitness for a particular purpose
+- Accuracy of detection
+- Reliability of performance
+- Completeness of results
+
+The system may fail to detect dangerous objects or may incorrectly identify harmless objects as threats.
+
+==================================================================
+
+3. LIMITATION OF LIABILITY
+
+Cambrian Intelligence SL, its employees, directors, and affiliates shall NOT be liable for:
+- Any damages arising from use of this system
+- Missed detections that result in safety incidents
+- False alarms that cause operational disruptions
+- Any direct, indirect, incidental, or consequential damages
+- Loss of data, revenue, or business opportunities
+
+==================================================================
+
+4. USER RESPONSIBILITY
+
+Users of this prototype system must:
+- Understand the inherent limitations and potential for errors
+- Implement appropriate backup detection methods
+- Never rely solely on this system for critical safety decisions
+- Conduct thorough testing in their specific environment
+- Have qualified personnel oversee system operation
+
+==================================================================
+
+5. GDPR COMPLIANCE (EU USERS)
+
+Under the General Data Protection Regulation (GDPR):
+- This website demonstration does not collect personal data
+- No cookies are used for tracking
+- No user behavior is monitored or stored
+- Contact information provided is used only for business inquiries
+
+Data Controller: Cambrian Intelligence SL
+
+If you have concerns about data processing, contact: hello@cambrianintelligence.com
+
+==================================================================
+
+6. CCPA COMPLIANCE (CALIFORNIA USERS)
+
+Under the California Consumer Privacy Act (CCPA):
+- We do not sell personal information
+- This demonstration does not collect personal information
+- No tracking technologies are employed
+
+==================================================================
+
+7. INTELLECTUAL PROPERTY
+
+All content, including but not limited to algorithms, designs, concepts, and demonstrations, are proprietary to Cambrian Intelligence SL. This demonstration does not grant any license or rights to use our technology.
+
+==================================================================
+
+8. EXPORT COMPLIANCE
+
+This technology demonstration may be subject to export control regulations. Users outside the European Union should verify compliance with their local import/export laws.
+
+==================================================================
+
+9. CHANGES TO DISCLAIMER
+
+This disclaimer may be updated without notice. Continued use of this demonstration constitutes acceptance of any changes.
+
+==================================================================
+
+10. GOVERNING LAW
+
+This disclaimer is governed by Spanish law and the laws of the European Union. Any disputes shall be resolved in Spanish courts.
+
+==================================================================
+
+CONTACT INFORMATION
+
+For questions about this disclaimer:
+Cambrian Intelligence SL
+Email: hello@cambrianintelligence.com
+Website: https://cambrianintelligence.com
+
+==================================================================
+
+By viewing this demonstration, you acknowledge that you have read, understood, and agree to be bound by this disclaimer.
+
+This document was last updated: December 2024
+
+© 2024 Cambrian Intelligence SL. All rights reserved.
