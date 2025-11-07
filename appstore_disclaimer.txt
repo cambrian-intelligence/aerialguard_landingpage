@@ -1,0 +1,197 @@
+# Legal Terms and Conditions
+
+## Legal Notice
+Cambrian Intelligence SL (hereinafter "the Company")
+
+CIF: B87788097
+
+Contact: hello@cambrianintelligence.com
+
+This Legal Notice complies with Article 10 of Law 34/2002, of July 11, on Information Society Services and Electronic Commerce (LSSI). For any inquiries, contact us at the details above.
+
+Last Updated: October 31, 2025
+
+
+## IMPORTANT PROTOTYPE DISCLAIMER
+
+
+### **1. Prototype Notice**
+
+This is a prototype under active development. It may contain errors, inaccuracies, or incomplete features. Performance, detection accuracy, and reliability are not guaranteed under any circumstances.
+
+
+### **2. No Certification or Warranty**
+
+This software is non-certified and is not certified by EASA, the FAA, or any other aviation authority. It is provided 'as is', without any express or implied warranties. It must not be used as the sole basis for safety-critical decisions, navigation, or operations, and it is not a substitute for certified avionics, mandated safety equipment (like TCAS), or the "see and avoid" responsibilities of the pilot. It is designed as a supplemental assistant tool only, similar to visual aids like binoculars for distant detection, and can operate fully offline in airplane mode without network connectivity.
+
+
+### **3. User Responsibility**
+
+You must understand and accept that:  
+* The system may miss real objects or detect non-existent ones (false positives).  
+* Results depend heavily on environmental conditions (e.g., weather, light, visibility).  
+* You remain fully responsible for maintaining situational awareness and using alternative safety measures at all times.  
+* You must operate the device in airplane mode or ensure no interference with aircraft systems, as required by applicable aviation regulations.
+
+
+### **4. Limitation of Liability**
+
+Cambrian Intelligence SL and its affiliates cannot be held liable for any incident, damage, or loss — direct or indirect — arising from the use of this prototype, to the extent permitted by applicable law. Nothing in these terms excludes or limits our liability for death, personal injury, or fraud arising from our negligence, or any other liability that cannot be excluded under applicable law.
+
+
+### **4.1 Indemnification**
+
+You agree to indemnify, defend, and hold harmless Cambrian Intelligence SL and its affiliates from any claims, losses, damages, or expenses arising from your misuse of the app, violation of these terms, or non-compliance with applicable laws or regulations.
+
+
+## PRIVACY AND DATA PROTECTION
+
+
+### **5. Data Controller**
+
+For the purpose of the General Data Protection Regulation (GDPR) and other relevant data protection laws, the Data Controller is: Cambrian Intelligence SL  
+Contact: hello@cambrianintelligence.com
+
+
+### **6. Account and Authentication Data**
+
+To create an account and use the service, we collect a valid email address and password. Alternatively, you may authenticate using third-party services (Apple or Google). If you use these services, we receive only the necessary authentication data (such as your email address) to create and link your account. We do not sell this personal information, as defined by the California Consumer Privacy Act (CCPA).
+
+
+### **7. Local Data Processing**
+
+The application, in its default configuration, processes video from the external environment directly on your device. It does not identify individuals and does not rely on facial biometrics. This video and sensor data is not transmitted to us and remains on your device unless you explicitly consent to share it (see Point 8). While the system is designed to capture the external environment, third parties may be indirectly identifiable in any data processed or recorded by the user.
+
+
+### **8. Optional Data Sharing for System Improvement (AI Training)**
+
+To help us improve the system's detection accuracy and performance, you may voluntarily choose to opt-in to share data with us. This data consists of short, anonymized video fragments and sensor data related only to detection events (e.g., a bird sighting). This data is used exclusively for internal research, development, and AI model training. Sharing requires network connectivity and is not needed for core app functionality; the app operates fully offline otherwise. This consent can be withdrawn at any time through the application's settings.
+
+
+### **9. Data Protection Rights**
+
+The user may exercise their rights of access, rectification, erasure, opposition, limitation of processing, and withdrawal of consent. To exercise these rights, please contact our Data Controller at: hello@cambrianintelligence.com. Withdrawing consent does not affect the lawfulness of any processing that occurred before the withdrawal.
+
+
+### **10. Data Security**
+
+We implement reasonable administrative, technical, and physical security measures, such as encryption and access controls, to protect your data. However, no method of transmission or storage is 100% secure, and we cannot guarantee absolute security.
+
+
+### **11. Limited Purpose of Use**
+
+Any data collected by us (such as account data or optional AI training data) will not be used for facial recognition, behavioral advertising, sale to third-party data brokers, or commercial data mining.
+
+
+### **12. Disclosure of Data**
+
+We may share your information only in the following limited circumstances:  
+* Service Providers: With trusted third-party vendors who help us operate our application (e.g., cloud hosting), who are bound by non-disclosure agreements and strict data processing terms.  
+* Legal Obligations: If we are required by law, court order, or a formal request from a competent authority (e.g., in an official accident investigation), we may be obligated to disclose data. By using the app, you acknowledge that such disclosure may be required.
+
+
+### **12.1 Data Retention**
+
+Account data is retained for as long as your account is active, plus a reasonable period for legal purposes (e.g., up to 6 years). Shared AI data is retained only as necessary for improvement and deleted upon consent withdrawal or as required by applicable data protection laws.
+
+
+### **12.2 International Transfers**
+
+If data is transferred outside the EU/EEA, we use approved mechanisms such as Standard Contractual Clauses to ensure adequate protection, where required by applicable law.
+
+
+## USER CONDUCT AND RESPONSIBILITIES
+
+
+### **13. Aeronautical Compliance**
+
+The user is solely responsible for complying with all local and international civil aviation regulations according to applicable local regulations. This includes, but is not limited to, restrictions on camera use in sensitive or restricted airspace and prohibitions on recording military installations, critical infrastructure, or other protected operations. Users must ensure the device does not interfere with aircraft systems, such as by using airplane mode.
+
+
+### **14. Prohibition of Unlawful Surveillance**
+
+It is strictly forbidden to use this application for illegal surveillance, monitoring of protected facilities, or any other activity that violates local, national, or international law.
+
+
+### **15. User's Insurance**
+
+The user is solely responsible for obtaining and maintaining all necessary insurance policies for their operations, including but not limited to, aircraft liability insurance, third-party liability, and appropriate coverage for all devices used on board, as required by applicable local regulations.
+
+
+### **15.1 Prohibited High-Risk Uses**
+
+You must not use the app in safety-critical or regulated environments without independent verification, and it is not intended for integration with aircraft avionics or as a primary detection tool.
+
+
+## INTELLECTUAL PROPERTY AND LICENSE
+
+
+### **16. Intellectual Property**
+
+All content, including but not limited to algorithms, designs, concepts, and demonstrations, are proprietary to Cambrian Intelligence SL.
+
+
+### **17. License Grant to User**
+
+Subject to your compliance with these terms, Cambrian Intelligence SL grants you a limited, non-exclusive, non-transferable, and revocable license to use the prototype software solely for its intended purpose.
+
+
+### **18. Export Compliance**
+
+This technology may be subject to export control regulations. Users outside the European Union should verify compliance with their local import/export laws and any applicable international regulations.
+
+
+### **18.1 License Restrictions**
+
+You may not reverse-engineer, modify, or commercially resell the software without our express written consent.
+
+
+## AGE, GOVERNING LAW, & TERMINATION
+
+
+### **19. Age and Minors**
+
+Use of this application by minors (those under the age of 16, or the equivalent minimum age in their jurisdiction) requires verifiable consent from a parent or legal guardian.
+
+
+### **20. Changes to Terms**
+
+This disclaimer may be updated without notice. Continued use of this application constitutes acceptance of any changes.
+
+
+### **21. Modification and Discontinuation of Service**
+
+Cambrian Intelligence SL reserves the right to modify, suspend, or discontinue, temporarily or permanently, the application or any service to which it connects, with or without notice.
+
+
+### **22. Governing Law**
+
+This disclaimer is governed by Spanish law and the laws of the European Union. Any disputes shall be resolved in Spanish courts.
+
+
+### **23. Suspension of Access**
+
+We reserve the right to suspend or terminate your access to this application immediately, without prior notice, for any illicit use or breach of these terms and conditions.
+
+
+### **23.1 Severability**
+
+If any provision of these terms is held invalid or unenforceable by a court of competent jurisdiction, the remaining provisions will remain in full force and effect.
+
+
+### **23.2 Force Majeure**
+
+Neither party shall be liable for any delay or failure to perform resulting from causes outside its reasonable control, including acts of God, war, terrorism, or natural disasters, to the extent permitted by applicable law.
+
+
+### **23.3 Dispute Resolution**
+
+Any disputes arising from these terms shall first be attempted to be resolved through good-faith negotiations. If unresolved, they shall be submitted to binding arbitration under the Spanish Arbitration Act, unless prohibited by applicable law.
+
+
+## ACCEPTANCE OF TERMS
+
+
+### **24. Acceptance**
+
+By creating an account or using this application, the user declares that they have read, understood, and accepted these terms and conditions in their entirety.
