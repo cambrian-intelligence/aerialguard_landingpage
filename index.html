@@ -17,6 +17,7 @@
             line-height: 1.6;
             color: #1a1a1a;
             overflow-x: hidden;
+            scroll-behavior: smooth;
         }
         
         .hero {
@@ -81,47 +82,16 @@
             text-align: center;
         }
         
-        .object-drone {
-            background: #3b82f6;
-        }
+        .object-drone { background: #3b82f6; }
+        .object-bird { background: #10b981; }
+        .object-plane { background: #f59e0b; }
+        .track-drone { border-color: #3b82f6; }
+        .track-bird { border-color: #10b981; }
+        .track-plane { border-color: #f59e0b; }
         
-        .object-bird {
-            background: #10b981;
-        }
-        
-        .object-plane {
-            background: #f59e0b;
-        }
-        
-        .track-drone {
-            border-color: #3b82f6;
-        }
-        
-        .track-bird {
-            border-color: #10b981;
-        }
-        
-        .track-plane {
-            border-color: #f59e0b;
-        }
-        
-        .label-drone {
-            background: rgba(59, 130, 246, 0.2);
-            color: #93c5fd;
-            border: 1px solid rgba(59, 130, 246, 0.3);
-        }
-        
-        .label-bird {
-            background: rgba(16, 185, 129, 0.2);
-            color: #6ee7b7;
-            border: 1px solid rgba(16, 185, 129, 0.3);
-        }
-        
-        .label-plane {
-            background: rgba(245, 158, 11, 0.2);
-            color: #fbbf24;
-            border: 1px solid rgba(245, 158, 11, 0.3);
-        }
+        .label-drone { background: rgba(59, 130, 246, 0.2); color: #93c5fd; border: 1px solid rgba(59, 130, 246, 0.3); }
+        .label-bird { background: rgba(16, 185, 129, 0.2); color: #6ee7b7; border: 1px solid rgba(16, 185, 129, 0.3); }
+        .label-plane { background: rgba(245, 158, 11, 0.2); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
         
         .container {
             max-width: 1200px;
@@ -131,9 +101,7 @@
             z-index: 2;
         }
 
-        .features .container {
-            z-index: 3;
-        }
+        .features .container { z-index: 3; }
         
         .hero-content {
             text-align: center;
@@ -174,22 +142,15 @@
             padding: 2rem;
             border: 1px solid rgba(255, 255, 255, 0.2);
             transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         
         .system-card:hover {
             transform: translateY(-10px);
             background: rgba(255, 255, 255, 0.15);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-        }
-        
-        .system-icon {
-            width: 60px;
-            height: 60px;
-            margin: 0 auto 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #e2e8f0;
         }
         
         .system-card h3 {
@@ -201,20 +162,57 @@
         .system-card p {
             opacity: 0.8;
             font-size: 1rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem; /* Reduced from 1.5rem */
         }
         
+        /* RESTORED: Fixed margin instead of auto to reduce gap */
+        .button-group {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 0; /* Reduced to remove gap */
+        }
+
         .app-store-button {
             display: inline-block;
-            margin-top: 1.5rem;
             transition: all 0.3s ease;
             border-radius: 8px;
             overflow: hidden;
+            height: 40px;
         }
         
-        .app-store-button:hover {
-            transform: scale(1.05);
+        .app-store-button img {
+            height: 40px;
+            width: auto;
+            display: block;
         }
+        
+        .app-store-button:hover { transform: scale(1.05); }
+
+        .btn-action {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            height: 40px;
+            padding: 0 1.5rem;
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .btn-action:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-2px);
+        }
+
+        .btn-action i { margin-right: 8px; }
         
         .contact-button {
             display: inline-block;
@@ -224,7 +222,7 @@
             border-radius: 25px;
             text-decoration: none;
             font-weight: 600;
-            margin-top: 1.5rem;
+            margin-top: 0.5rem; /* Reduced margin */
             transition: all 0.3s ease;
             border: 1px solid rgba(255, 255, 255, 0.3);
         }
@@ -234,78 +232,12 @@
             transform: translateY(-2px);
         }
         
+        /* Features Section */
         .features {
             padding: 5rem 0;
             background: #f8fafc;
             position: relative;
             overflow: hidden;
-        }
-
-        .radar-background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        .detection-zone {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 600px;
-            height: 400px;
-            margin: -200px 0 0 -300px;
-            background: radial-gradient(ellipse,
-                rgba(34, 197, 94, 0.05) 0%,
-                rgba(34, 197, 94, 0.02) 70%,
-                transparent 100%);
-            border: 2px solid rgba(34, 197, 94, 0.2);
-            border-radius: 20px;
-            opacity: 0.6;
-        }
-
-        .detection-zone::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 80%;
-            height: 80%;
-            margin: -40% 0 0 -40%;
-            border: 1px solid rgba(34, 197, 94, 0.15);
-            border-radius: 15px;
-        }
-
-        .detection-blip {
-            position: absolute;
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            opacity: 0.9;
-            animation: blipPulse 3s ease-in-out infinite;
-        }
-
-        .detection-blip.drone {
-            background: #3b82f6;
-            box-shadow: 0 0 12px rgba(59, 130, 246, 0.6);
-        }
-
-        .detection-blip.bird {
-            background: #10b981;
-            box-shadow: 0 0 12px rgba(16, 185, 129, 0.6);
-        }
-
-        .detection-blip.plane {
-            background: #f59e0b;
-            box-shadow: 0 0 12px rgba(245, 158, 11, 0.6);
-        }
-
-        @keyframes blipPulse {
-            0%, 100% { transform: scale(1); opacity: 0.9; }
-            50% { transform: scale(1.2); opacity: 1; }
         }
         
         .section-title {
@@ -359,6 +291,7 @@
             line-height: 1.6;
         }
         
+        /* Capabilities Section */
         .capabilities {
             padding: 5rem 0;
             background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
@@ -399,29 +332,273 @@
             font-size: 1.2rem;
         }
         
+        /* Demo Section (New Video Layout) */
         .demo-section {
             padding: 5rem 0;
             background: white;
+            scroll-margin-top: 50px;
         }
         
         .demo-content {
             text-align: center;
         }
-        
-        .demo-video {
-            background: #f1f5f9;
-            border-radius: 20px;
-            padding: 3rem;
-            margin: 2rem 0;
-            border: 2px dashed #cbd5e1;
+
+        .demo-claim {
+            font-size: 1.4rem;
+            line-height: 1.6;
+            color: #334155;
+            max-width: 900px;
+            margin: 0 auto 2rem auto;
+            font-weight: 500;
         }
-        
-        .demo-video p {
+
+        .demo-subtitle {
             font-size: 1.1rem;
             color: #64748b;
-            margin-bottom: 1rem;
+            margin: 0 auto 2rem auto;
+            max-width: 100%;
+            background: #f1f5f9;
+            padding: 1rem;
+            border-radius: 10px;
+            border: 1px solid #e2e8f0;
+            text-align: center;
+        }
+
+        /* Setup Section */
+        .setup-container {
+            width: 100%;
+            margin: 0 auto 3rem auto;
+            text-align: center;
+        }
+
+        .setup-text {
+            font-size: 1.1rem;
+            color: #475569;
+            margin-bottom: 2rem;
+        }
+
+        .setup-text a {
+            color: #3b82f6;
+            text-decoration: underline;
+            font-weight: 500;
+        }
+
+        .setup-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .setup-img-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .setup-img-card img {
+            width: 100%;
+            height: 350px;
+            object-fit: contain; 
+            background: white; 
+            border-radius: 8px;
+            display: block;
+        }
+
+        .setup-img-caption {
+            margin-top: 1rem;
+            font-size: 1rem;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        /* Video Grid Layout */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .video-card {
+            background: #f8fafc;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 177.78%; /* 9:16 Aspect Ratio */
+            background: #000;
+        }
+
+        .video-wrapper video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background-color: #000;
+        }
+
+        /* Specific rule for fullscreen */
+        video:fullscreen {
+            object-fit: contain;
+            background-color: #000;
+            width: 100%;
+            height: 100%;
         }
         
+        video:-webkit-full-screen {
+            object-fit: contain;
+            background-color: #000;
+            width: 100%;
+            height: 100%;
+        }
+        
+        video:-moz-full-screen {
+            object-fit: contain;
+            background-color: #000;
+            width: 100%;
+            height: 100%;
+        }
+
+        .video-desc {
+            padding: 1rem;
+            font-size: 0.9rem;
+            color: #475569;
+            font-weight: 500;
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+        }
+
+        /* Landscape Video */
+        .landscape-demo {
+            width: 100%;
+            margin: 0 auto 4rem auto;
+            background: #f8fafc;
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .landscape-video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            background: #000;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 1rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .landscape-video-wrapper video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        /* Play Button Overlay */
+        .play-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 30px;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            z-index: 10;
+            border: 2px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+
+        .play-overlay i {
+            margin-left: 5px; /* Visual correction for play icon center */
+        }
+
+        /* Coming Soon Section */
+        .coming-soon-card {
+            width: 100%;
+            margin: 0 auto;
+            background: linear-gradient(to right, #f8fafc, #ffffff);
+            border: 2px dashed #cbd5e1;
+            border-radius: 20px;
+            padding: 3rem;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .coming-soon-card::before {
+            content: 'Roadmap';
+            position: absolute;
+            top: 20px;
+            right: -30px;
+            background: #3b82f6;
+            color: white;
+            padding: 5px 40px;
+            transform: rotate(45deg);
+            font-size: 0.8rem;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .coming-soon-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(45deg, #1e293b, #334155);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+        }
+
+        .coming-soon-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .coming-soon-list li {
+            background: white;
+            padding: 1rem 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+            color: #475569;
+        }
+
+        .coming-soon-list li i {
+            margin-right: 10px;
+            color: #3b82f6;
+        }
+
+        /* Contact Section */
         .contact {
             padding: 5rem 0;
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
@@ -491,44 +668,28 @@
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
         }
 
-        .missile-icon {
-            width: 96px;
-            height: 96px;
-        }
-
-        .drone-icon {
-            width: 36px;
-            height: 36px;
-        }
+        .missile-icon { width: 96px; height: 96px; }
+        .drone-icon { width: 36px; height: 36px; }
         
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         
+        @media (max-width: 900px) {
+            .video-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
         @media (max-width: 768px) {
-            .dual-systems {
-                grid-template-columns: 1fr;
-            }
-            
-            .capabilities-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .container {
-                padding: 0 1rem;
-            }
+            .dual-systems { grid-template-columns: 1fr; }
+            .capabilities-content { grid-template-columns: 1fr; gap: 2rem; }
+            .hero h1 { font-size: 2.5rem; }
+            .container { padding: 0 1rem; }
+            .video-grid { grid-template-columns: 1fr; }
+            .setup-images { grid-template-columns: 1fr; }
+            .setup-img-card img { height: 250px; }
         }
     </style>
 </head>
@@ -541,45 +702,31 @@
                 <p>State-of-the-art machine intelligence algorithms for detecting and tracking flying objects with superhuman precision.</p>
 
                 <div class="flying-objects-icons">
-                    <div class="object-icon">
-                        <i class="fa-solid fa-dove"></i>
-                    </div>
+                    <div class="object-icon"><i class="fa-solid fa-dove"></i></div>
                     <div class="object-icon">
                         <svg class="drone-icon" viewBox="0 0 40 40" fill="currentColor">
-                            <!-- Main body -->
                             <rect x="16" y="16" width="8" height="8" rx="1"/>
-                            <!-- Arms -->
                             <rect x="8" y="19" width="8" height="2"/>
                             <rect x="24" y="19" width="8" height="2"/>
                             <rect x="19" y="8" width="2" height="8"/>
                             <rect x="19" y="24" width="2" height="8"/>
-                            <!-- Propellers -->
                             <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1"/>
                             <circle cx="28" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1"/>
                             <circle cx="12" cy="28" r="4" fill="none" stroke="currentColor" stroke-width="1"/>
                             <circle cx="28" cy="28" r="4" fill="none" stroke="currentColor" stroke-width="1"/>
-                            <!-- Center dot -->
                             <circle cx="20" cy="20" r="1"/>
                         </svg>
                     </div>
-                    <div class="object-icon">
-                        <i class="fa-solid fa-plane"></i>
-                    </div>
-                    <div class="object-icon">
-                        <i class="fa-solid fa-helicopter"></i>
-                    </div>
+                    <div class="object-icon"><i class="fa-solid fa-plane"></i></div>
+                    <div class="object-icon"><i class="fa-solid fa-helicopter"></i></div>
                     <div class="object-icon">
                         <svg class="missile-icon" viewBox="0 0 80 40" fill="currentColor">
-                            <!-- Main body -->
                             <rect x="20" y="18" width="40" height="4"/>
-                            <!-- Nose cone -->
                             <path d="M60,18 L70,20 L60,22 Z"/>
-                            <!-- Fins -->
                             <path d="M25,18 L20,10 L30,18 Z"/>
                             <path d="M25,22 L20,30 L30,22 Z"/>
                             <path d="M35,18 L30,12 L40,18 Z"/>
                             <path d="M35,22 L30,28 L40,22 Z"/>
-                            <!-- Exhaust -->
                             <rect x="15" y="19" width="5" height="2" fill="#e74c3c"/>
                             <path d="M10,20 L15,19 L15,21 Z" fill="#e74c3c"/>
                         </svg>
@@ -588,69 +735,132 @@
 
                 <div class="dual-systems">
                     <div class="system-card">
-                        <h3>Onboard Camera System</h3>
+                        <h3>App-based onboard system</h3>
                         <p>Mobile app with multi-camera support, distance estimation, and real-time detection for aircraft-mounted systems.</p>
-                        <a href="#" class="app-store-button">
-                            <svg width="119.66407" height="40" viewBox="0 0 119.66407 40">
-                                <title>Download_on_the_App_Store_Badge_US-UK_RGB_blk_4SVG_092917</title>
-                                <g>
-                                    <g>
-                                        <g>
-                                            <path d="M110.13477,0H9.53468c-.3667,0-.729,0-1.09473.002-.30615.002-.60986.00781-.91895.0127A13.21476,13.21476,0,0,0,5.5171.19141a6.66509,6.66509,0,0,0-1.90088.627A6.43779,6.43779,0,0,0,1.99757,1.99707,6.25844,6.25844,0,0,0,.81935,3.61816a6.60119,6.60119,0,0,0-.625,1.90332,12.993,12.993,0,0,0-.1792,2.002C.00587,7.83008.00489,8.1377,0,8.44434V31.5586c.00489.3105.00587.6113.01515.9219a12.99232,12.99232,0,0,0,.1792,2.0019,6.58756,6.58756,0,0,1-.625,1.9043A6.20778,6.20778,0,0,0,1.99757,38.001a6.27445,6.27445,0,0,0,1.61865,1.1787,6.70082,6.70082,0,0,0,1.90088.6308,13.45514,13.45514,0,0,0,2.0039.1768c.30909.0068.6128.0107.91895.0107C8.80567,40,9.168,40,9.53468,40H110.13477c.3594,0,.7246,0,1.084-.002.3047,0,.6172-.0039.9219-.0107a13.279,13.279,0,0,0,2-.1768,6.80432,6.80432,0,0,0,1.9082-.6308,6.27742,6.27742,0,0,0,1.6172-1.1787,6.39482,6.39482,0,0,0,1.1816-1.6143,6.60413,6.60413,0,0,0,.6191-1.9043,13.50643,13.50643,0,0,0,.1856-2.0019c.0039-.3106.0039-.6114.0039-.9219.0078-.3633.0078-.7246.0078-1.0938V9.53613c0-.36621,0-.72949-.0078-1.09179,0-.30664,0-.61426-.0039-.9209a13.5071,13.5071,0,0,0-.1856-2.002,6.6177,6.6177,0,0,0-.6191-1.90332,6.46619,6.46619,0,0,0-2.7988-2.7998,6.76754,6.76754,0,0,0-1.9082-.627,13.04394,13.04394,0,0,0-2-.17676c-.3047-.00488-.6172-.01074-.9219-.01269-.3594-.002-.7246-.002-1.084-.002Z" style="fill: #a6a6a6"/>
-                                            <path d="M8.44483,39.125c-.30468,0-.602-.0039-.90429-.0107a12.68714,12.68714,0,0,1-1.86914-.1631,5.88381,5.88381,0,0,1-1.65674-.5479,5.40573,5.40573,0,0,1-1.397-1.0166,5.32082,5.32082,0,0,1-1.02051-1.3965,5.72186,5.72186,0,0,1-.543-1.6572,12.41351,12.41351,0,0,1-.1665-1.875c-.00634-.2109-.01464-.9131-.01464-.9131V8.44434S.88185,7.75293.8877,7.5498a12.37039,12.37039,0,0,1,.16553-1.87207,5.7555,5.7555,0,0,1,.54346-1.6621A5.37349,5.37349,0,0,1,2.61183,2.61768,5.56543,5.56543,0,0,1,4.01417,1.59521a5.82309,5.82309,0,0,1,1.65332-.54394A12.58589,12.58589,0,0,1,7.543.88721L8.44532.875H111.21387l.9131.0127a12.38493,12.38493,0,0,1,1.8584.16259,5.93833,5.93833,0,0,1,1.6709.54785,5.59374,5.59374,0,0,1,2.415,2.41993,5.76267,5.76267,0,0,1,.5352,1.64892,12.995,12.995,0,0,1,.1738,1.88721c.0029.2832.0029.5874.0029.89014.0079.375.0079.73193.0079,1.09179V30.4648c0,.3633,0,.7178-.0079,1.0752,0,.3252,0,.6231-.0039.9297a12.73126,12.73126,0,0,1-.1709,1.8535,5.739,5.739,0,0,1-.54,1.67,5.48029,5.48029,0,0,1-1.0156,1.3857,5.4129,5.4129,0,0,1-1.3994,1.0225,5.86168,5.86168,0,0,1-1.668.5498,12.54218,12.54218,0,0,1-1.8692.1631c-.2929.0068-.5996.0107-.8974.0107l-1.084.002Z"/>
-                                        </g>
-                                        <g>
-                                            <g>
-                                                <g>
-                                                    <path d="M24.76888,20.30068a4.94881,4.94881,0,0,1,2.35656-4.15206,5.06566,5.06566,0,0,0-3.99116-2.15768c-1.67924-.17626-3.30719,1.00483-4.1629,1.00483-.87227,0-2.18977-.98733-3.6085-.95814a5.31529,5.31529,0,0,0-4.47292,2.72787c-1.934,3.34842-.49141,8.26947,1.3612,10.97608.9269,1.32535,2.01018,2.8058,3.42763,2.7533,1.38706-.05753,1.9051-.88448,3.5794-.88448,1.65876,0,2.14479.88448,3.591.8511,1.48838-.02416,2.42613-1.33124,3.32051-2.66914a10.962,10.962,0,0,0,1.51842-3.09251A4.78205,4.78205,0,0,1,24.76888,20.30068Z" style="fill: #fff"/>
-                                                    <path d="M22.03725,12.21089a4.87248,4.87248,0,0,0,1.11452-3.49062,4.95746,4.95746,0,0,0-3.20758,1.65961,4.63634,4.63634,0,0,0-1.14371,3.36139A4.09905,4.09905,0,0,0,22.03725,12.21089Z" style="fill: #fff"/>
-                                                </g>
-                                            </g>
-                                            <g>
-                                                <path d="M42.30227,27.13965h-4.7334l-1.13672,3.35645H34.42727l4.4834-12.418h2.083l4.4834,12.418H43.438ZM38.0591,25.59082h3.752l-1.84961-5.44727h-.05176Z" style="fill: #fff"/>
-                                                <path d="M55.15969,25.96973c0,2.81348-1.50586,4.62109-3.77832,4.62109a3.0693,3.0693,0,0,1-2.84863-1.584h-.043v4.48438h-1.8584V21.44238H48.4302v1.50586h.03418a3.21162,3.21162,0,0,1,2.88281-1.60059C53.645,21.34766,55.15969,23.16406,55.15969,25.96973Zm-1.91016,0c0-1.833-.94727-3.03809-2.39258-3.03809-1.41992,0-2.375,1.23047-2.375,3.03809,0,1.82422.95508,3.0459,2.375,3.0459C52.30227,29.01563,53.24953,27.81934,53.24953,25.96973Z" style="fill: #fff"/>
-                                                <path d="M65.12453,25.96973c0,2.81348-1.50586,4.62109-3.77832,4.62109a3.0693,3.0693,0,0,1-2.84863-1.584h-.043v4.48438h-1.8584V21.44238H58.395v1.50586h.03418A3.21162,3.21162,0,0,1,61.312,21.34766C63.60988,21.34766,65.12453,23.16406,65.12453,25.96973Zm-1.91016,0c0-1.833-.94727-3.03809-2.39258-3.03809-1.41992,0-2.375,1.23047-2.375,3.03809,0,1.82422.95508,3.0459,2.375,3.0459C62.26711,29.01563,63.21438,27.81934,63.21438,25.96973Z" style="fill: #fff"/>
-                                                <path d="M71.71047,27.03613c.1377,1.23145,1.334,2.04,2.96875,2.04,1.56641,0,2.69336-.80859,2.69336-1.91895,0-.96387-.67969-1.541-2.28906-1.93652l-1.60937-.3877c-2.28027-.55078-3.33887-1.61719-3.33887-3.34766,0-2.14258,1.86719-3.61426,4.51855-3.61426,2.624,0,4.42285,1.47168,4.4834,3.61426h-1.876c-.1123-1.23926-1.13672-1.9873-2.63379-1.9873s-2.52148.75684-2.52148,1.8584c0,.87793.6543,1.39453,2.25488,1.79l1.36816.33594c2.54785.60254,3.60645,1.626,3.60645,3.44238,0,2.32324-1.85059,3.77832-4.79395,3.77832-2.75391,0-4.61328-1.4209-4.7334-3.667Z" style="fill: #fff"/>
-                                                <path d="M83.34621,19.2998v2.14258h1.72168v1.47168H83.34621v4.99121c0,.77539.34473,1.13672,1.10156,1.13672a5.80752,5.80752,0,0,0,.61133-.043v1.46289a5.10351,5.10351,0,0,1-1.03223.08594c-1.833,0-2.54785-.68848-2.54785-2.44434V22.91406H80.16262V21.44238H81.479V19.2998Z" style="fill: #fff"/>
-                                                <path d="M86.065,25.96973c0-2.84863,1.67773-4.63867,4.29395-4.63867,2.625,0,4.29492,1.79,4.29492,4.63867,0,2.85645-1.66113,4.63867-4.29492,4.63867C87.72609,30.6084,86.065,28.82617,86.065,25.96973Zm6.69531,0c0-1.9541-.89551-3.10742-2.40137-3.10742s-2.40039,1.16211-2.40039,3.10742c0,1.96191.89453,3.10645,2.40039,3.10645S92.76027,27.93164,92.76027,25.96973Z" style="fill: #fff"/>
-                                                <path d="M96.18606,21.44238h1.77246v1.541h.043a2.1594,2.1594,0,0,1,2.17773-1.63574,2.86616,2.86616,0,0,1,.63672.06934v1.73828a2.59794,2.59794,0,0,0-.835-.1123,1.87264,1.87264,0,0,0-1.93652,2.083v5.37012h-1.8584Z" style="fill: #fff"/>
-                                                <path d="M109.3843,27.83691c-.25,1.64355-1.85059,2.77148-3.89844,2.77148-2.63379,0-4.26855-1.76465-4.26855-4.5957,0-2.83984,1.64355-4.68164,4.19043-4.68164,2.50488,0,4.08008,1.7207,4.08008,4.46582v.63672h-6.39453v.1123a2.358,2.358,0,0,0,2.43555,2.56445,2.04834,2.04834,0,0,0,2.09082-1.27344Zm-6.28223-2.70215h4.52637a2.1773,2.1773,0,0,0-2.2207-2.29785A2.292,2.292,0,0,0,103.10207,25.13477Z" style="fill: #fff"/>
-                                            </g>
-                                        </g>
-                                    </g>
-                                    <g>
-                                        <g>
-                                            <path d="M37.82619,8.731a2.63964,2.63964,0,0,1,2.80762,2.96484c0,1.90625-1.03027,3.002-2.80762,3.002H35.67092V8.731Zm-1.22852,5.123h1.125a1.87588,1.87588,0,0,0,1.96777-2.146,1.881,1.881,0,0,0-1.96777-2.13379h-1.125Z" style="fill: #fff"/>
-                                            <path d="M41.68068,12.44434a2.13323,2.13323,0,1,1,4.24707,0,2.13358,2.13358,0,1,1-4.24707,0Zm3.333,0c0-.97607-.43848-1.54687-1.208-1.54687-.77246,0-1.207.5708-1.207,1.54688,0,.98389.43457,1.55029,1.207,1.55029C44.57522,13.99463,45.01369,13.42432,45.01369,12.44434Z" style="fill: #fff"/>
-                                            <path d="M51.57326,14.69775h-.92187l-.93066-3.31641h-.07031l-.92676,3.31641h-.91309l-1.24121-4.50293h.90137l.80664,3.436h.06641l.92578-3.436h.85254l.92578,3.436h.07031l.80273-3.436h.88867Z" style="fill: #fff"/>
-                                            <path d="M53.85354,10.19482H54.709v.71533h.06641a1.348,1.348,0,0,1,1.34375-.80225,1.46456,1.46456,0,0,1,1.55859,1.6748v2.915h-.88867V12.00586c0-.72363-.31445-1.0835-.97168-1.0835a1.03294,1.03294,0,0,0-1.0752,1.14111v2.63428h-.88867Z" style="fill: #fff"/>
-                                            <path d="M59.09377,8.437h.88867v6.26074h-.88867Z" style="fill: #fff"/>
-                                            <path d="M61.21779,12.44434a2.13346,2.13346,0,1,1,4.24756,0,2.1338,2.1338,0,1,1-4.24756,0Zm3.333,0c0-.97607-.43848-1.54687-1.208-1.54687-.77246,0-1.207.5708-1.207,1.54688,0,.98389.43457,1.55029,1.207,1.55029C64.11232,13.99463,64.5508,13.42432,64.5508,12.44434Z" style="fill: #fff"/>
-                                            <path d="M66.4009,13.42432c0-.81055.60352-1.27783,1.6748-1.34424l1.21973-.07031v-.38867c0-.47559-.31445-.74414-.92187-.74414-.49609,0-.83984.18213-.93848.50049h-.86035c.09082-.77344.81836-1.26953,1.83984-1.26953,1.12891,0,1.76563.562,1.76563,1.51318v3.07666h-.85547v-.63281h-.07031a1.515,1.515,0,0,1-1.35254.707A1.36026,1.36026,0,0,1,66.4009,13.42432Zm2.89453-.38477v-.37646l-1.09961.07031c-.62012.0415-.90137.25244-.90137.64941,0,.40527.35156.64111.835.64111A1.0615,1.0615,0,0,0,69.29543,13.03955Z" style="fill: #fff"/>
-                                            <path d="M71.34816,12.44434c0-1.42285.73145-2.32422,1.86914-2.32422a1.484,1.484,0,0,1,1.38086.79h.06641V8.437h.88867v6.26074h-.85156v-.71143h-.07031a1.56284,1.56284,0,0,1-1.41406.78564C72.0718,14.772,71.34816,13.87061,71.34816,12.44434Zm.918,0c0,.95508.4502,1.52979,1.20313,1.52979.749,0,1.21191-.583,1.21191-1.52588,0-.93848-.46777-1.52979-1.21191-1.52979C72.72121,10.91846,72.26613,11.49707,72.26613,12.44434Z" style="fill: #fff"/>
-                                            <path d="M79.23,12.44434a2.13323,2.13323,0,1,1,4.24707,0,2.13358,2.13358,0,1,1-4.24707,0Zm3.333,0c0-.97607-.43848-1.54687-1.208-1.54687-.77246,0-1.207.5708-1.207,1.54688,0,.98389.43457,1.55029,1.207,1.55029C82.12453,13.99463,82.563,13.42432,82.563,12.44434Z" style="fill: #fff"/>
-                                            <path d="M84.66945,10.19482h.85547v.71533h.06641a1.348,1.348,0,0,1,1.34375-.80225,1.46456,1.46456,0,0,1,1.55859,1.6748v2.915H87.605V12.00586c0-.72363-.31445-1.0835-.97168-1.0835a1.03294,1.03294,0,0,0-1.0752,1.14111v2.63428h-.88867Z" style="fill: #fff"/>
-                                            <path d="M93.51516,9.07373v1.1416h.97559v.74854h-.97559V13.2793c0,.47168.19434.67822.63672.67822a2.96657,2.96657,0,0,0,.33887-.02051v.74023a2.9155,2.9155,0,0,1-.4834.04541c-.98828,0-1.38184-.34766-1.38184-1.21582v-2.543h-.71484v-.74854h.71484V9.07373Z" style="fill: #fff"/>
-                                            <path d="M95.70461,8.437h.88086v2.48145h.07031a1.3856,1.3856,0,0,1,1.373-.80664,1.48339,1.48339,0,0,1,1.55078,1.67871v2.90723H98.69v-2.688c0-.71924-.335-1.0835-.96289-1.0835a1.05194,1.05194,0,0,0-1.13379,1.1416v2.62988h-.88867Z" style="fill: #fff"/>
-                                            <path d="M104.76125,13.48193a1.828,1.828,0,0,1-1.95117,1.30273A2.04531,2.04531,0,0,1,100.73,12.46045a2.07685,2.07685,0,0,1,2.07617-2.35254c1.25293,0,2.00879.856,2.00879,2.27V12.688h-3.17969v.0498a1.1902,1.1902,0,0,0,1.19922,1.29,1.07934,1.07934,0,0,0,1.07129-.5459Zm-3.126-1.45117h2.27441a1.08647,1.08647,0,0,0-1.1084-1.1665A1.15162,1.15162,0,0,0,101.63527,12.03076Z" style="fill: #fff"/>
-                                        </g>
-                                    </g>
-                                </g>
-                            </svg>
-                        </a>
+                        <div class="button-group">
+                            <a href="https://apps.apple.com/es/app/aerial-guard/id6746328878" class="app-store-button" target="_blank" rel="noopener noreferrer">
+                                <img src="images/appstoreblack.svg" alt="Download on the App Store">
+                            </a>
+                            <a href="#demo" class="btn-action">
+                                <i class="fa-solid fa-play"></i> See it in action
+                            </a>
+                        </div>
                     </div>
                     <div class="system-card">
                         <h3>Ground-Based Camera System</h3>
                         <p>Strategic camera placement with 3D stereoscopic estimation and live dashboard for comprehensive area coverage.</p>
-                        <a href="#contact" class="contact-button">Get in Touch</a>
+                        <div class="button-group">
+                            <a href="#features" class="contact-button">Learn More</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <section class="demo-section" id="demo">
+        <div class="container">
+            <div class="demo-content">
+                <h2 class="section-title">Onboard version in action</h2>
+                
+                <p class="demo-claim">Get early warnings for bird hazards effortlessly. </p>
+                <p class="demo-claim">Running continuously or on-demand.</p> 
+                <p class="demo-claim">It’s like having a dedicated copilot scanning the skies with binoculars.</p>   
+
+                <div class="setup-container">
+                    <div class="setup-images">
+                        <div class="setup-img-card">
+                            <img src="./images/image1.jpg" alt="Mobile phone mounted on windshield">
+                            <p class="setup-img-caption">Setup in cockpit</p>
+                        </div>
+                        <div class="setup-img-card">
+                            <img src="./images/image2.jpg" alt="Standard suction mount">
+                            <p class="setup-img-caption">Standard mount like <a href="https://www.amazon.com/Windshield-Universal-Dashboard-Suction-Compatible/dp/B06ZZWYQF7/" target="_blank">this one.</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="demo-subtitle">
+                    The <strong>top camera is the telephoto lens</strong> and the <strong>bottom is the main one</strong>, synchronized.
+                </div>
+
+                <div class="video-grid">
+                    <div class="video-card">
+                        <div class="video-wrapper">
+                            <video controls poster="">
+                                <source src="./videos/video1.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <div class="video-desc">
+                            Bird captured first on main camera, then entering telephoto cone upon turning.
+                        </div>
+                    </div>
+
+                    <div class="video-card">
+                        <div class="video-wrapper">
+                            <video controls poster="">
+                                <source src="./videos/video2.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <div class="video-desc">
+                            Takeoff with mainly long-distance detections.
+                        </div>
+                    </div>
+
+                    <div class="video-card">
+                        <div class="video-wrapper">
+                            <video controls poster="">
+                                <source src="./videos/video3.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <div class="video-desc">
+                            Detections facing the sun.
+                        </div>
+                    </div>
+
+                    <div class="video-card">
+                        <div class="video-wrapper">
+                            <video controls poster="">
+                                <source src="./videos/video4.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <div class="video-desc">
+                            Long-distance aircraft tracking.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="landscape-demo">
+                    <h3>Radar view display</h3>
+                    <div class="landscape-video-wrapper" id="radarVideoWrapper">
+                        <video controls id="radarVideo">
+                            <source src="./videos/video5.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="play-overlay" id="radarPlayBtn">
+                            <i class="fa-solid fa-play"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="coming-soon-card">
+                    <h3 class="coming-soon-title">Coming soon</h3>
+                    <ul class="coming-soon-list">
+                        <li><i class="fa-solid fa-camera"></i> External camera support</li>
+                        <li><i class="fa-brands fa-apple"></i> iPad support</li>
+                        <li><i class="fa-solid fa-map-location-dot"></i> Integration with Skydemon and other apps</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
     <section class="features" id="features">
-        <div class="radar-background" id="detectionBackground"></div>
         <div class="container">
             <h2 class="section-title">Comprehensive Detection Capabilities</h2>
             
@@ -771,21 +981,6 @@
         </div>
     </section>
 
-    <section class="demo-section">
-        <div class="container">
-            <div class="demo-content">
-                <h2 class="section-title">See It In Action</h2>
-                <p>Experience the power of our detection system through real-world demonstrations.</p>
-                
-                <div class="demo-video">
-                    <p><strong>🎥 Live Demo Available</strong></p>
-                    <p>Contact us to see our onboard camera system detecting birds and other flying objects in real-time during flight operations.</p>
-                    <a href="#contact" class="cta-button" style="display: inline-block; background: linear-gradient(45deg, #3b82f6, #1d4ed8); color: white; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; margin-top: 2rem; transition: all 0.3s ease; box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);">Request Demo</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section class="contact" id="contact">
         <div class="container">
             <h2>Ready to Deploy Advanced Detection?</h2>
@@ -811,7 +1006,7 @@
 
     <footer style="background: #0f172a; color: #e2e8f0; padding: 2rem 0; text-align: center; border-top: 1px solid rgba(255,255,255,0.1);">
         <div class="container">
-            <p style="margin-bottom: 1rem;">© 2024 Cambrian Intelligence SL (CIF: B87788097). All rights reserved.</p>
+            <p style="margin-bottom: 1rem;">© 2025 Cambrian Intelligence SL (CIF: B87788097). All rights reserved.</p>
             <p style="font-size: 0.9rem; opacity: 0.8;">
                 <a href="disclaimer.txt" style="color: #60a5fa; text-decoration: none;" target="_blank">Legal Disclaimer & Important Notice</a> |
                 <span style="color: #60a5fa;">Prototype Version - Please Review Limitations</span>
@@ -1041,182 +1236,10 @@
                 requestAnimationFrame(() => this.animate());
             }
         }
-        
-        class DetectionBlip {
-            constructor(container, zoneCenter, zoneWidth, zoneHeight) {
-                this.container = container;
-                this.zoneCenter = zoneCenter;
-                this.zoneWidth = zoneWidth;
-                this.zoneHeight = zoneHeight;
-
-                this.types = ['drone', 'bird', 'plane'];
-                this.type = this.types[Math.floor(Math.random() * this.types.length)];
-
-                // Spawn from random edge
-                this.spawnFromEdge();
-                this.setMovementPattern();
-
-                this.element = document.createElement('div');
-                this.element.className = `detection-blip ${this.type}`;
-                this.element.style.left = this.x + 'px';
-                this.element.style.top = this.y + 'px';
-
-                container.appendChild(this.element);
-            }
-
-            spawnFromEdge() {
-                const edge = Math.floor(Math.random() * 4); // 0: left, 1: right, 2: top, 3: bottom
-                const zoneLeft = this.zoneCenter.x - this.zoneWidth / 2;
-                const zoneRight = this.zoneCenter.x + this.zoneWidth / 2;
-                const zoneTop = this.zoneCenter.y - this.zoneHeight / 2;
-                const zoneBottom = this.zoneCenter.y + this.zoneHeight / 2;
-
-                switch (edge) {
-                    case 0: // Left edge
-                        this.x = zoneLeft - 20;
-                        this.y = zoneTop + Math.random() * this.zoneHeight;
-                        break;
-                    case 1: // Right edge
-                        this.x = zoneRight + 20;
-                        this.y = zoneTop + Math.random() * this.zoneHeight;
-                        break;
-                    case 2: // Top edge
-                        this.x = zoneLeft + Math.random() * this.zoneWidth;
-                        this.y = zoneTop - 20;
-                        break;
-                    case 3: // Bottom edge
-                        this.x = zoneLeft + Math.random() * this.zoneWidth;
-                        this.y = zoneBottom + 20;
-                        break;
-                }
-            }
-
-            setMovementPattern() {
-                const speedMultiplier = Math.random() < 0.25 ? (1.5 + Math.random() * 1.5) : 1; // 25% chance of being faster
-
-                switch (this.type) {
-                    case 'plane':
-                        // Straight line movement
-                        const targetX = this.zoneCenter.x + (Math.random() - 0.5) * this.zoneWidth;
-                        const targetY = this.zoneCenter.y + (Math.random() - 0.5) * this.zoneHeight;
-                        const distance = Math.sqrt((targetX - this.x) ** 2 + (targetY - this.y) ** 2);
-                        this.vx = ((targetX - this.x) / distance) * 1.5 * speedMultiplier;
-                        this.vy = ((targetY - this.y) / distance) * 1.5 * speedMultiplier;
-                        break;
-                    case 'bird':
-                        // Curved movement with slight direction changes
-                        this.vx = (Math.random() - 0.5) * 1.2 * speedMultiplier;
-                        this.vy = (Math.random() - 0.5) * 1.2 * speedMultiplier;
-                        this.directionChangeTimer = 0;
-                        break;
-                    case 'drone':
-                        // Erratic movement
-                        this.vx = (Math.random() - 0.5) * 1.0 * speedMultiplier;
-                        this.vy = (Math.random() - 0.5) * 1.0 * speedMultiplier;
-                        this.directionChangeTimer = 0;
-                        break;
-                }
-            }
-
-            update() {
-                // Update movement based on type
-                if (this.type === 'bird') {
-                    this.directionChangeTimer++;
-                    if (this.directionChangeTimer > 120) { // Change direction every 2 seconds
-                        this.vx += (Math.random() - 0.5) * 0.3;
-                        this.vy += (Math.random() - 0.5) * 0.3;
-                        this.directionChangeTimer = 0;
-                    }
-                } else if (this.type === 'drone') {
-                    this.directionChangeTimer++;
-                    if (this.directionChangeTimer > 60) { // Change direction every second
-                        this.vx += (Math.random() - 0.5) * 0.5;
-                        this.vy += (Math.random() - 0.5) * 0.5;
-                        this.directionChangeTimer = 0;
-                    }
-                }
-
-                this.x += this.vx;
-                this.y += this.vy;
-
-                this.element.style.left = this.x + 'px';
-                this.element.style.top = this.y + 'px';
-
-                // Check if object is far outside detection zone
-                const margin = 100;
-                const zoneLeft = this.zoneCenter.x - this.zoneWidth / 2 - margin;
-                const zoneRight = this.zoneCenter.x + this.zoneWidth / 2 + margin;
-                const zoneTop = this.zoneCenter.y - this.zoneHeight / 2 - margin;
-                const zoneBottom = this.zoneCenter.y + this.zoneHeight / 2 + margin;
-
-                return this.x >= zoneLeft && this.x <= zoneRight &&
-                       this.y >= zoneTop && this.y <= zoneBottom;
-            }
-
-            destroy() {
-                this.element.remove();
-            }
-        }
-
-        class DetectionSystem {
-            constructor() {
-                this.container = document.getElementById('detectionBackground');
-                this.blips = [];
-                this.zoneCenter = { x: 0, y: 0 };
-                this.zoneWidth = 600;
-                this.zoneHeight = 400;
-                this.init();
-            }
-
-            init() {
-                this.createDetectionZone();
-                this.animate();
-
-                // Spawn blips periodically
-                setInterval(() => {
-                    if (Math.random() < 0.4) { // 40% chance per interval
-                        this.spawnBlip();
-                    }
-                }, 3000);
-            }
-
-            createDetectionZone() {
-                const detectionZone = document.createElement('div');
-                detectionZone.className = 'detection-zone';
-                this.container.appendChild(detectionZone);
-
-                // Update zone center after DOM is ready
-                setTimeout(() => {
-                    const containerRect = this.container.getBoundingClientRect();
-                    this.zoneCenter.x = containerRect.width / 2;
-                    this.zoneCenter.y = containerRect.height / 2;
-                }, 100);
-            }
-
-            spawnBlip() {
-                if (this.zoneCenter.x === 0) return; // Not positioned yet
-
-                const blip = new DetectionBlip(this.container, this.zoneCenter, this.zoneWidth, this.zoneHeight);
-                this.blips.push(blip);
-            }
-
-            animate() {
-                this.blips = this.blips.filter(blip => {
-                    const alive = blip.update();
-                    if (!alive) {
-                        blip.destroy();
-                    }
-                    return alive;
-                });
-
-                requestAnimationFrame(() => this.animate());
-            }
-        }
 
         // Initialize flying objects and detection system when page loads
         document.addEventListener('DOMContentLoaded', () => {
             new FlyingObjectsManager();
-            new DetectionSystem();
         });
         
         function scrollToFeatures() {
@@ -1261,6 +1284,27 @@
             el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
             observer.observe(el);
         });
+
+        // Script to hide overlay button when video plays
+        const radarVideo = document.getElementById('radarVideo');
+        const radarPlayBtn = document.getElementById('radarPlayBtn');
+        const radarWrapper = document.getElementById('radarVideoWrapper');
+
+        if(radarVideo && radarPlayBtn) {
+            radarVideo.addEventListener('play', () => {
+                radarPlayBtn.style.opacity = '0';
+            });
+            
+            radarVideo.addEventListener('pause', () => {
+                radarPlayBtn.style.opacity = '1';
+            });
+
+            // Optional: Click overlay to play
+            radarPlayBtn.addEventListener('click', (e) => {
+                // e.stopPropagation(); // If needed
+                // Native controls usually capture click, but this ensures overlay doesn't block
+            });
+        }
     </script>
 </body>
 </html>
