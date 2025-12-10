@@ -4,8 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flying Objects Detection & Tracking System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        :root {
+            --primary: #3b82f6;
+            --glass-border: rgba(255, 255, 255, 0.08);
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -19,150 +27,201 @@
             overflow-x: hidden;
             scroll-behavior: smooth;
         }
-        
+
+        /* --- HERO SECTION --- */
         .hero {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+            background: radial-gradient(circle at top center, #1e293b 0%, #020617 80%);
             min-height: 100vh;
             display: flex;
             align-items: center;
             position: relative;
             overflow: hidden;
+            padding-top: 80px;
         }
         
         .hero::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23ffffff" stroke-width="0.1" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-            opacity: 0.3;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: 
+                linear-gradient(rgba(2, 6, 23, 0) 0%, rgba(2, 6, 23, 1) 100%),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 20 0 L 0 0 0 20" fill="none" stroke="%233b82f6" stroke-width="0.05" opacity="0.3"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 1;
+            z-index: 0;
         }
         
         .flying-objects-bg {
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+            top: 0; left: 0; right: 0; bottom: 0;
             overflow: hidden;
             pointer-events: none;
             z-index: 1;
         }
-        
-        .flying-object {
-            position: absolute;
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            opacity: 0.6;
-        }
-        
-        .tracking-box {
-            position: absolute;
-            border: 2px solid;
-            border-radius: 4px;
-            pointer-events: none;
-            opacity: 0.7;
-            backdrop-filter: blur(1px);
-        }
-        
-        .tracking-label {
-            position: absolute;
-            top: -40px;
-            left: 0;
-            font-size: 10px;
-            font-weight: 600;
-            padding: 4px 8px;
-            border-radius: 4px;
-            white-space: nowrap;
-            backdrop-filter: blur(5px);
-            min-width: 80px;
-            text-align: center;
-        }
-        
-        .object-drone { background: #3b82f6; }
-        .object-bird { background: #10b981; }
-        .object-plane { background: #f59e0b; }
-        .track-drone { border-color: #3b82f6; }
-        .track-bird { border-color: #10b981; }
-        .track-plane { border-color: #f59e0b; }
-        
-        .label-drone { background: rgba(59, 130, 246, 0.2); color: #93c5fd; border: 1px solid rgba(59, 130, 246, 0.3); }
-        .label-bird { background: rgba(16, 185, 129, 0.2); color: #6ee7b7; border: 1px solid rgba(16, 185, 129, 0.3); }
-        .label-plane { background: rgba(245, 158, 11, 0.2); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            position: relative;
-            z-index: 2;
-        }
 
-        .features .container { z-index: 3; }
-        
         .hero-content {
             text-align: center;
             color: white;
-            animation: fadeInUp 1s ease-out;
+            animation: fadeInUp 1s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
-        
+
         .hero h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-size: clamp(3rem, 6vw, 5rem);
             font-weight: 800;
             margin-bottom: 1.5rem;
-            background: linear-gradient(45deg, #ffffff, #e2e8f0, #cbd5e1);
+            line-height: 1.1;
+            background: linear-gradient(180deg, #ffffff 0%, #cbd5e1 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            text-shadow: 0 0 30px rgba(255,255,255,0.1);
         }
-        
+
+        /* UPDATED: Made text white/lighter */
         .hero p {
             font-size: 1.25rem;
-            margin-bottom: 2rem;
+            margin-bottom: 3rem;
+            color: #ffffff; /* Changed from grey */
             opacity: 0.9;
-            max-width: 600px;
+            max-width: 650px;
             margin-left: auto;
             margin-right: auto;
+            line-height: 1.8;
+            font-weight: 300;
         }
-        
+
+        .flying-objects-icons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+            margin: 0 auto 4rem auto;
+            flex-wrap: wrap;
+        }
+
+        /* UPDATED: Icons are now white */
+        .object-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(255, 255, 255, 0.05); /* Slightly brighter bg */
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            color: #ffffff; /* Changed from grey to white */
+            border: 1px solid rgba(255, 255, 255, 0.15); /* Brighter border */
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .object-icon:hover {
+            background: rgba(59, 130, 246, 0.1);
+            border-color: rgba(59, 130, 246, 0.4);
+            color: #60a5fa;
+            transform: translateY(-5px); 
+        }
+
+        .missile-icon { width: 96px; height: 96px; }
+        .drone-icon { width: 36px; height: 36px; }
+
         .dual-systems {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 2rem;
-            margin-top: 3rem;
+            margin-top: 2rem;
         }
-        
+
         .system-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 2rem;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.3s ease;
+            background: linear-gradient(145deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.01) 100%);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 3rem;
+            border: 1px solid var(--glass-border);
+            transition: all 0.4s ease;
             display: flex;
             flex-direction: column;
             align-items: center;
+            text-align: center;
         }
-        
+
         .system-card:hover {
-            transform: translateY(-10px);
-            background: rgba(255, 255, 255, 0.15);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            transform: translateY(-5px);
+            border-color: rgba(255,255,255,0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
         }
-        
+
         .system-card h3 {
-            font-size: 1.5rem;
+            font-size: 1.75rem;
             margin-bottom: 1rem;
-            color: #e2e8f0;
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        /* UPDATED: Card text is white/lighter */
+        .system-card p {
+            color: #ffffff; /* Changed from grey */
+            opacity: 0.9;
+            font-size: 1.05rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        /* HUD Tracking Elements */
+        .flying-object {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            box-shadow: 0 0 10px currentColor;
         }
         
-        .system-card p {
-            opacity: 0.8;
-            font-size: 1rem;
-            margin-bottom: 1rem;
+        .tracking-box {
+            position: absolute;
+            border: 1px solid;
+            box-shadow: 0 0 15px rgba(0,0,0,0.3) inset;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .tracking-box::before, .tracking-box::after {
+            content: ''; position: absolute; width: 4px; height: 4px; background: currentColor;
+        }
+        .tracking-box::before { top: -1px; left: -1px; }
+        .tracking-box::after { bottom: -1px; right: -1px; }
+
+        .tracking-label {
+            position: absolute;
+            top: -45px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Courier New', monospace;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 2px;
+            white-space: nowrap;
+            backdrop-filter: blur(8px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            text-transform: uppercase;
+        }
+
+        .object-drone { background: #60a5fa; color: #60a5fa; }
+        .object-bird { background: #34d399; color: #34d399; }
+        .object-plane { background: #fbbf24; color: #fbbf24; }
+        .track-drone { border-color: rgba(96, 165, 250, 0.6); color: #60a5fa; }
+        .track-bird { border-color: rgba(52, 211, 153, 0.6); color: #34d399; }
+        .track-plane { border-color: rgba(251, 191, 36, 0.6); color: #fbbf24; }
+        .label-drone { background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(96, 165, 250, 0.3); color: #60a5fa; }
+        .label-bird { background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(52, 211, 153, 0.3); color: #34d399; }
+        .label-plane { background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(251, 191, 36, 0.3); color: #fbbf24; }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 2;
         }
         
         .button-group {
@@ -171,7 +230,7 @@
             justify-content: center;
             gap: 1rem;
             flex-wrap: wrap;
-            margin-top: 0;
+            margin-top: auto; 
         }
 
         .app-store-button {
@@ -179,59 +238,57 @@
             transition: all 0.3s ease;
             border-radius: 8px;
             overflow: hidden;
-            height: 40px;
+            height: 48px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
         }
         
-        .app-store-button img {
-            height: 40px;
-            width: auto;
-            display: block;
-        }
-        
-        .app-store-button:hover { transform: scale(1.05); }
+        .app-store-button img { height: 48px; width: auto; display: block; }
+        .app-store-button:hover { transform: translateY(-2px); box-shadow: 0 10px 15px rgba(0,0,0,0.3); }
 
         .btn-action {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            height: 40px;
-            padding: 0 1.5rem;
-            background: rgba(255, 255, 255, 0.15);
+            height: 48px;
+            padding: 0 2rem;
+            background: rgba(255, 255, 255, 0.1);
             color: white;
             text-decoration: none;
             border-radius: 8px;
             font-weight: 600;
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             transition: all 0.3s ease;
             white-space: nowrap;
         }
 
         .btn-action:hover {
-            background: rgba(255, 255, 255, 0.25);
+            background: white;
+            color: #020617;
+            border-color: white;
             transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
-
-        .btn-action i { margin-right: 8px; }
         
         .contact-button {
             display: inline-block;
-            background: rgba(255, 255, 255, 0.2);
+            background: transparent;
             color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 25px;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
-            margin-top: 0.5rem;
             transition: all 0.3s ease;
             border: 1px solid rgba(255, 255, 255, 0.3);
         }
         
         .contact-button:hover {
-            background: rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.1);
+            border-color: white;
             transform: translateY(-2px);
         }
+
+        /* --- REST OF THE CONTENT (Preserved) --- */
         
-        /* Features Section */
         .features {
             padding: 5rem 0;
             background: #f8fafc;
@@ -275,7 +332,9 @@
             align-items: center;
             justify-content: center;
             margin-bottom: 1rem;
-            color: #64748b;
+            color: #3b82f6;
+            background: #eff6ff; 
+            border-radius: 10px;
         }
         
         .feature-card h3 {
@@ -290,7 +349,6 @@
             line-height: 1.6;
         }
         
-        /* Capabilities Section */
         .capabilities {
             padding: 5rem 0;
             background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
@@ -326,12 +384,11 @@
             content: '✓';
             position: absolute;
             left: 0;
-            color: #10b981;
+            color: #3b82f6; 
             font-weight: bold;
             font-size: 1.2rem;
         }
         
-        /* Demo Section (New Video Layout) */
         .demo-section {
             padding: 5rem 0;
             background: white;
@@ -342,12 +399,11 @@
             text-align: center;
         }
 
-        /* NEW: Stacked layout for the intro text block */
         .demo-intro-block {
             display: flex;
-            flex-direction: column; /* Vertical stacking */
-            align-items: center;    /* Center items */
-            gap: 1rem;              /* Spacing between lines */
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
             margin: 0 auto 3rem auto;
             max-width: 900px;
         }
@@ -362,7 +418,7 @@
             border-radius: 50px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.03);
             transition: all 0.2s ease;
-            width: fit-content; /* Only take necessary width */
+            width: fit-content;
         }
 
         .demo-feature-pill:hover {
@@ -386,37 +442,23 @@
             line-height: 1.3;
             text-align: left;
         }
-        /* End NEW styling */
 
         .demo-subtitle {
-            font-size: 1.1rem;
-            color: #64748b;
-            margin: 0 auto 2rem auto;
-            max-width: 100%;
-            background: #f1f5f9;
-            padding: 1rem;
-            border-radius: 10px;
+            background: #f8fafc;
             border: 1px solid #e2e8f0;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            display: inline-block;
+            font-size: 1rem;
+            margin: 0 auto 2rem auto;
+            color: #475569;
             text-align: center;
         }
 
-        /* Setup Section */
         .setup-container {
             width: 100%;
             margin: 0 auto 3rem auto;
             text-align: center;
-        }
-
-        .setup-text {
-            font-size: 1.1rem;
-            color: #475569;
-            margin-bottom: 2rem;
-        }
-
-        .setup-text a {
-            color: #3b82f6;
-            text-decoration: underline;
-            font-weight: 500;
         }
 
         .setup-images {
@@ -452,7 +494,11 @@
             font-weight: 500;
         }
 
-        /* Video Grid Layout */
+        .setup-img-caption a {
+            color: #3b82f6;
+            text-decoration: underline;
+        }
+
         .video-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -476,34 +522,10 @@
 
         .video-wrapper video {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
             object-fit: contain;
             background-color: #000;
-        }
-
-        /* Specific rule for fullscreen */
-        video:fullscreen {
-            object-fit: contain;
-            background-color: #000;
-            width: 100%;
-            height: 100%;
-        }
-        
-        video:-webkit-full-screen {
-            object-fit: contain;
-            background-color: #000;
-            width: 100%;
-            height: 100%;
-        }
-        
-        video:-moz-full-screen {
-            object-fit: contain;
-            background-color: #000;
-            width: 100%;
-            height: 100%;
         }
 
         .video-desc {
@@ -518,7 +540,6 @@
             background: white;
         }
 
-        /* Landscape Video */
         .landscape-demo {
             width: 100%;
             margin: 0 auto 4rem auto;
@@ -540,26 +561,17 @@
 
         .landscape-video-wrapper video {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
+            top: 0; left: 0; width: 100%; height: 100%; object-fit: contain;
         }
 
-        /* Play Button Overlay */
         .play-overlay {
             position: absolute;
-            top: 50%;
-            left: 50%;
+            top: 50%; left: 50%;
             transform: translate(-50%, -50%);
-            width: 80px;
-            height: 80px;
+            width: 80px; height: 80px;
             background: rgba(0, 0, 0, 0.6);
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            display: flex; align-items: center; justify-content: center;
             color: white;
             font-size: 30px;
             pointer-events: none;
@@ -569,11 +581,8 @@
             box-shadow: 0 0 20px rgba(0,0,0,0.5);
         }
 
-        .play-overlay i {
-            margin-left: 5px; /* Visual correction for play icon center */
-        }
+        .play-overlay i { margin-left: 5px; }
 
-        /* Coming Soon Section */
         .coming-soon-card {
             width: 100%;
             margin: 0 auto;
@@ -589,8 +598,7 @@
         .coming-soon-card::before {
             content: 'Roadmap';
             position: absolute;
-            top: 20px;
-            right: -30px;
+            top: 20px; right: -30px;
             background: #3b82f6;
             color: white;
             padding: 5px 40px;
@@ -629,12 +637,8 @@
             color: #475569;
         }
 
-        .coming-soon-list li i {
-            margin-right: 10px;
-            color: #3b82f6;
-        }
+        .coming-soon-list li i { margin-right: 10px; color: #3b82f6; }
 
-        /* Contact Section */
         .contact {
             padding: 5rem 0;
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
@@ -642,10 +646,7 @@
             text-align: center;
         }
         
-        .contact h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-        }
+        .contact h2 { font-size: 2.5rem; margin-bottom: 2rem; }
         
         .contact-info {
             display: grid;
@@ -661,59 +662,11 @@
             backdrop-filter: blur(10px);
         }
         
-        .contact-card h3 {
-            margin-bottom: 1rem;
-            color: #e2e8f0;
-        }
-        
-        .contact-card a {
-            color: #60a5fa;
-            text-decoration: none;
-        }
-        
-        .contact-card a:hover {
-            color: #93c5fd;
-        }
+        .contact-card h3 { margin-bottom: 1rem; color: #e2e8f0; }
+        .contact-card a { color: #60a5fa; text-decoration: none; }
+        .contact-card a:hover { color: #93c5fd; }
 
-        /* Flying Object Icons Grid */
-        .flying-objects-icons {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin: 2rem 0;
-            flex-wrap: wrap;
-        }
-
-        /* Logic to break line after 3 items on small screens */
-        .mobile-break {
-            display: none;
-            flex-basis: 100%;
-            height: 0;
-        }
-
-        .object-icon {
-            width: 60px;
-            height: 60px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            color: #e2e8f0;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .object-icon:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-        }
-
-        .missile-icon { width: 96px; height: 96px; }
-        .drone-icon { width: 36px; height: 36px; }
+        .mobile-break { display: none; flex-basis: 100%; height: 0; }
         
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(30px); }
@@ -721,20 +674,14 @@
         }
         
         @media (max-width: 900px) {
-            .video-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+            .video-grid { grid-template-columns: repeat(2, 1fr); }
+            .hero h1 { font-size: 3rem; }
         }
 
         @media (max-width: 768px) {
-            /* Mobile spacing fixes */
-            .hero {
-                display: block; 
-                padding-top: 140px; 
-                padding-bottom: 80px; 
-                height: auto; 
-            }
-
+            .hero { padding-top: 100px; text-align: left; }
+            .hero-content { text-align: left; }
+            .hero p { margin-left: 0; }
             .dual-systems { grid-template-columns: 1fr; }
             .capabilities-content { grid-template-columns: 1fr; gap: 2rem; }
             .hero h1 { font-size: 2.5rem; }
@@ -742,37 +689,15 @@
             .video-grid { grid-template-columns: 1fr; }
             .setup-images { grid-template-columns: 1fr; }
             .setup-img-card img { height: 250px; }
-
-            /* NEW: Video Card Description on Top */
-            .video-card {
-                display: flex;
-                flex-direction: column-reverse; /* Swaps the description (bottom) to the top */
-            }
-
-            .video-desc {
-                min-height: auto;
-                padding: 1rem;
-                border-bottom: 1px solid #e2e8f0; /* Move divider to separate text from video below */
-                text-align: left;
-                justify-content: flex-start;
-            }
-
-            /* Responsive fix for the new demo header on very small screens */
-            .demo-intro-block {
-                max-width: 100%;
-            }
-            .demo-feature-pill {
-                width: 100%; /* Full width on mobile for easier reading */
-                justify-content: center;
-                text-align: center;
-            }
+            .flying-objects-icons { justify-content: flex-start; }
+            .video-card { display: flex; flex-direction: column-reverse; }
+            .video-desc { min-height: auto; padding: 1rem; border-bottom: 1px solid #e2e8f0; text-align: left; justify-content: flex-start; }
+            .demo-intro-block { max-width: 100%; }
+            .demo-feature-pill { width: 100%; justify-content: center; text-align: center; }
         }
 
-        /* Force break on mobile/smaller screens to create 3+2 layout */
         @media (max-width: 640px) {
-            .mobile-break {
-                display: block;
-            }
+            .mobile-break { display: block; }
         }
     </style>
 </head>
@@ -1114,7 +1039,6 @@
     </footer>
 
     <script>
-        // Flying Objects Animation
         class FlyingObject {
             constructor(container) {
                 this.container = container;
@@ -1123,7 +1047,6 @@
                 this.type = this.types[Math.floor(Math.random() * this.types.length)];
                 this.label = this.labels[this.types.indexOf(this.type)];
 
-                // Define realistic ranges for each object type
                 this.ranges = {
                     drone: {
                         distance: { min: 50, max: 800 },
@@ -1148,7 +1071,6 @@
                 this.trackingLabel = document.createElement('div');
                 this.trackingLabel.className = `tracking-label label-${this.type}`;
 
-                // Generate initial values
                 this.confidence = Math.floor(Math.random() * 90 + 10);
                 this.distance = this.generateDistance();
                 this.speed = this.generateSpeed();
@@ -1156,26 +1078,22 @@
 
                 this.trackingBox.appendChild(this.trackingLabel);
                 
-                // Random starting position
                 this.x = Math.random() * window.innerWidth;
                 this.y = Math.random() * window.innerHeight;
                 
-                // Random velocity with occasional fast objects
-                const speedMultiplier = Math.random() < 0.3 ? (1.2 + Math.random() * 0.5) : 1; // 30% chance of being 1.2-1.7x faster
+                const speedMultiplier = Math.random() < 0.3 ? (1.2 + Math.random() * 0.5) : 1; 
                 this.vx = (Math.random() - 0.5) * 2 * speedMultiplier;
                 this.vy = (Math.random() - 0.5) * 2 * speedMultiplier;
 
-                // Ensure minimum speed
                 if (Math.abs(this.vx) < 0.5) this.vx = 0.5 * Math.sign(this.vx || 1);
                 if (Math.abs(this.vy) < 0.5) this.vy = 0.5 * Math.sign(this.vy || 1);
                 
                 this.isTracked = false;
-                this.trackDelay = Math.random() * 500 + 200; // 200-700ms delay
+                this.trackDelay = Math.random() * 500 + 200; 
                 
                 this.updatePosition();
                 container.appendChild(this.element);
                 
-                // Start tracking after delay
                 setTimeout(() => {
                     this.startTracking();
                 }, this.trackDelay);
@@ -1213,7 +1131,7 @@
             }
             
             updatePosition() {
-                const objectRadius = 4; // Half of the 8px object size
+                const objectRadius = 4;
                 this.element.style.left = (this.x - objectRadius) + 'px';
                 this.element.style.top = (this.y - objectRadius) + 'px';
                 
@@ -1234,7 +1152,6 @@
                 this.x += this.vx;
                 this.y += this.vy;
 
-                // Bounce off edges
                 if (this.x <= 0 || this.x >= window.innerWidth) {
                     this.vx *= -1;
                     this.x = Math.max(0, Math.min(window.innerWidth, this.x));
@@ -1246,24 +1163,20 @@
 
                 this.updatePosition();
 
-                // Update tracking data occasionally for realism
-                if (this.isTracked && Math.random() < 0.005) { // 0.5% chance per frame
+                if (this.isTracked && Math.random() < 0.005) {
                     this.updateTrackingData();
                 }
             }
 
             updateTrackingData() {
-                // Slightly adjust distance (simulate object movement)
-                const distanceVariation = Math.random() * 20 - 10; // ±10 units
+                const distanceVariation = Math.random() * 20 - 10;
                 this.distance = Math.round((Math.max(this.ranges[this.type].distance.min,
                     Math.min(this.ranges[this.type].distance.max, this.distance + distanceVariation)) * 10)) / 10;
 
-                // Slightly adjust speed
-                const speedVariation = Math.random() * 10 - 5; // ±5 km/h
+                const speedVariation = Math.random() * 10 - 5;
                 this.speed = Math.round((Math.max(this.ranges[this.type].speed.min,
                     Math.min(this.ranges[this.type].speed.max, this.speed + speedVariation)) * 10)) / 10;
 
-                // Occasionally update confidence
                 if (Math.random() < 0.3) {
                     this.confidence = Math.floor(Math.max(75, Math.min(99, this.confidence + Math.random() * 6 - 3)));
                 }
@@ -1284,30 +1197,26 @@
                 this.container = document.getElementById('flyingObjectsBg');
                 this.objects = [];
                 this.maxObjects = 6;
-                this.spawnInterval = 4000; // 4 seconds
+                this.spawnInterval = 4000;
                 
                 this.init();
             }
             
             init() {
-                // Create initial objects
                 for (let i = 0; i < 3; i++) {
                     setTimeout(() => {
                         this.spawnObject();
                     }, i * 1000);
                 }
                 
-                // Start animation loop
                 this.animate();
                 
-                // Spawn new objects periodically
                 setInterval(() => {
                     if (this.objects.length < this.maxObjects) {
                         this.spawnObject();
                     }
                 }, this.spawnInterval);
                 
-                // Handle window resize
                 window.addEventListener('resize', () => {
                     this.objects.forEach(obj => {
                         obj.x = Math.min(obj.x, window.innerWidth);
@@ -1320,14 +1229,13 @@
                 const obj = new FlyingObject(this.container);
                 this.objects.push(obj);
                 
-                // Remove object after some time
                 setTimeout(() => {
                     const index = this.objects.indexOf(obj);
                     if (index > -1) {
                         this.objects.splice(index, 1);
                         obj.destroy();
                     }
-                }, Math.random() * 15000 + 10000); // 10-25 seconds
+                }, Math.random() * 15000 + 10000);
             }
             
             animate() {
@@ -1336,7 +1244,6 @@
             }
         }
 
-        // Initialize flying objects and detection system when page loads
         document.addEventListener('DOMContentLoaded', () => {
             new FlyingObjectsManager();
         });
@@ -1347,7 +1254,6 @@
             });
         }
         
-        // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -1361,7 +1267,6 @@
             });
         });
         
-        // Add scroll animations
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -1376,7 +1281,6 @@
             });
         }, observerOptions);
         
-        // Observe all feature cards and other animated elements
         document.querySelectorAll('.feature-card, .system-card, .contact-card').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(20px)';
@@ -1384,7 +1288,6 @@
             observer.observe(el);
         });
 
-        // Script to hide overlay button when video plays
         const radarVideo = document.getElementById('radarVideo');
         const radarPlayBtn = document.getElementById('radarPlayBtn');
         const radarWrapper = document.getElementById('radarVideoWrapper');
@@ -1396,12 +1299,6 @@
             
             radarVideo.addEventListener('pause', () => {
                 radarPlayBtn.style.opacity = '1';
-            });
-
-            // Optional: Click overlay to play
-            radarPlayBtn.addEventListener('click', (e) => {
-                // e.stopPropagation(); // If needed
-                // Native controls usually capture click, but this ensures overlay doesn't block
             });
         }
     </script>
