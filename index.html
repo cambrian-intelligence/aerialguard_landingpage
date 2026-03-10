@@ -910,6 +910,51 @@
             line-height: 1.55;
         }
 
+        .ground-dashboard-showcase {
+            max-width: 960px;
+            margin: 3.5rem auto 0 auto;
+            text-align: center;
+        }
+
+        .ground-dashboard-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: rgba(255,255,255,0.5);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1.25rem;
+        }
+
+        .ground-dashboard-label i {
+            color: #60a5fa;
+        }
+
+        .ground-dashboard-frame {
+            position: relative;
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow:
+                0 0 0 1px rgba(59, 130, 246, 0.08),
+                0 25px 60px -12px rgba(0, 0, 0, 0.5),
+                0 0 60px -20px rgba(59, 130, 246, 0.12);
+        }
+
+        .ground-dashboard-frame img {
+            width: 100%;
+            display: block;
+        }
+
+        .ground-dashboard-caption {
+            margin-top: 1rem;
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.5);
+            line-height: 1.6;
+        }
+
         @media (max-width: 768px) {
             .ground-features-grid { grid-template-columns: 1fr; max-width: 400px; }
             .ground-system { padding: 4rem 0; }
@@ -1039,6 +1084,18 @@
                     <p>Review recorded events over any time window to detect risk situations, reconstruct incidents, and study prevention strategies.</p>
                 </div>
             </div>
+
+            <div class="ground-dashboard-showcase">
+                <div class="ground-dashboard-label">
+                    <i class="fa-solid fa-desktop"></i>
+                    Event Visualization Software
+                </div>
+                <div class="ground-dashboard-frame">
+                    <img src="./images/dashboard.png" alt="Aerial Guard event visualization dashboard — real-time and historical analysis">
+                </div>
+                <p class="ground-dashboard-caption">Real-time monitoring and historical event analysis in a single interface.</p>
+            </div>
+
         </div>
     </section>
 
