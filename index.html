@@ -702,6 +702,183 @@
         @media (max-width: 640px) {
             .mobile-break { display: block; }
         }
+
+        /* --- GROUND SYSTEM SECTION --- */
+        .ground-system {
+            padding: 6rem 0;
+            background: radial-gradient(ellipse at 50% 0%, #1e293b 0%, #0f172a 60%, #020617 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ground-system::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background:
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="ggrid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="%233b82f6" stroke-width="0.04" opacity="0.15"/></pattern></defs><rect width="100" height="100" fill="url(%23ggrid)"/></svg>');
+            opacity: 1;
+            z-index: 0;
+        }
+
+        .ground-system .container { position: relative; z-index: 1; }
+
+        .ground-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .ground-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(59, 130, 246, 0.12);
+            border: 1px solid rgba(59, 130, 246, 0.25);
+            padding: 0.5rem 1.25rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #60a5fa;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .ground-header h2 {
+            font-size: clamp(2rem, 4vw, 2.75rem);
+            font-weight: 800;
+            margin-bottom: 1.25rem;
+            background: linear-gradient(180deg, #ffffff 0%, #94a3b8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.15;
+        }
+
+        .ground-header p {
+            font-size: 1.15rem;
+            color: rgba(255,255,255,0.7);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        .ground-video-showcase {
+            max-width: 960px;
+            margin: 0 auto 3.5rem auto;
+            position: relative;
+        }
+
+        .ground-video-frame {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            background: #000;
+            border: 1px solid rgba(255,255,255,0.08);
+            box-shadow:
+                0 0 0 1px rgba(59, 130, 246, 0.1),
+                0 25px 60px -12px rgba(0, 0, 0, 0.6),
+                0 0 80px -20px rgba(59, 130, 246, 0.15);
+        }
+
+        .ground-video-inner {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            background: #000;
+        }
+
+        .ground-video-inner video {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            object-fit: contain;
+        }
+
+        .ground-play-overlay {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 88px; height: 88px;
+            background: rgba(59, 130, 246, 0.85);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            color: white;
+            font-size: 28px;
+            pointer-events: none;
+            transition: opacity 0.4s ease, transform 0.4s ease;
+            z-index: 10;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 0 40px rgba(59, 130, 246, 0.4);
+        }
+
+        .ground-play-overlay i { margin-left: 4px; }
+
+        .ground-video-caption {
+            text-align: center;
+            margin-top: 1.25rem;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.45);
+            font-style: italic;
+        }
+
+        .ground-features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        .ground-feature {
+            background: linear-gradient(160deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.015) 100%);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px;
+            padding: 2rem 1.75rem;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            transition: all 0.35s ease;
+        }
+
+        .ground-feature:hover {
+            border-color: rgba(59, 130, 246, 0.3);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+        }
+
+        .ground-feature-icon {
+            width: 44px; height: 44px;
+            display: flex; align-items: center; justify-content: center;
+            background: rgba(59, 130, 246, 0.12);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 12px;
+            margin-bottom: 1.25rem;
+            color: #60a5fa;
+            font-size: 1.1rem;
+        }
+
+        .ground-feature h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.6rem;
+            color: #ffffff;
+        }
+
+        .ground-feature p {
+            font-size: 0.92rem;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.55;
+        }
+
+        @media (max-width: 768px) {
+            .ground-features-grid { grid-template-columns: 1fr; max-width: 400px; }
+            .ground-system { padding: 4rem 0; }
+        }
+
+        @media (max-width: 900px) and (min-width: 769px) {
+            .ground-features-grid { grid-template-columns: 1fr 1fr; }
+        }
     </style>
 </head>
 <body>
@@ -764,9 +941,63 @@
                         <h3>Ground-Based Camera System</h3>
                         <p>Strategic camera placement with 3D stereoscopic estimation and live dashboard for comprehensive area coverage.</p>
                         <div class="button-group">
-                            <a href="#features" class="contact-button">Learn More</a>
+                            <a href="#ground-demo" class="btn-action">
+                                <i class="fa-solid fa-play"></i> See it in action
+                            </a>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ground-system" id="ground-demo">
+        <div class="container">
+            <div class="ground-header">
+                <div class="ground-badge">
+                    <i class="fa-solid fa-video"></i>
+                    Ground-Based System
+                </div>
+                <h2>Passive 3D Positioning<br>Through Stereo Vision</h2>
+                <p>By combining strategically placed cameras with our detection algorithms, we estimate the three-dimensional position of every detected object in real time — without radar or any active sensor.</p>
+            </div>
+
+            <div class="ground-video-showcase">
+                <div class="ground-video-frame">
+                    <div class="ground-video-inner" id="groundVideoWrapper">
+                        <video controls id="groundVideo">
+                            <source src="./videos/stereo_vision.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="ground-play-overlay" id="groundPlayBtn">
+                            <i class="fa-solid fa-play"></i>
+                        </div>
+                    </div>
+                </div>
+                <p class="ground-video-caption">An aircraft during takeoff with a bird nearby — 3D positions rendered in real time. Aircraft in green, birds in red.</p>
+            </div>
+
+            <div class="ground-features-grid">
+                <div class="ground-feature">
+                    <div class="ground-feature-icon">
+                        <i class="fa-solid fa-cube"></i>
+                    </div>
+                    <h4>Passive 3D Tracking</h4>
+                    <p>Full three-dimensional positioning using only optical input. No radar, no emitters — entirely passive stereo vision.</p>
+                </div>
+                <div class="ground-feature">
+                    <div class="ground-feature-icon">
+                        <i class="fa-solid fa-tower-broadcast"></i>
+                    </div>
+                    <h4>Airspace Monitoring</h4>
+                    <p>Continuous situational awareness around airports, military installations, or critical infrastructure in real time.</p>
+                </div>
+                <div class="ground-feature">
+                    <div class="ground-feature-icon">
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                    </div>
+                    <h4>Forensic Analysis</h4>
+                    <p>Review recorded events over any time window to detect risk situations, reconstruct incidents, and study prevention strategies.</p>
                 </div>
             </div>
         </div>
@@ -1017,7 +1248,7 @@
                 <div class="contact-card">
                     <h3>General Inquiries</h3>
                     <p>Cambrian Intelligence SL</p>
-                    <a href="mailto:hello@cambrianintelligence.com">hello AT cambrianintelligence DOT com</a><br>
+                    <a href="/cdn-cgi/l/email-protection#6008050c0c0f2003010d021209010e090e14050c0c0907050e03054e030f0d">hello AT cambrianintelligence DOT com</a><br>
                     <a href="https://cambrianintelligence.com">Visit Our Website</a><br>
                     <a href="https://www.linkedin.com/in/cristobalesteban/">CEO LinkedIn Profile</a>
                 </div>
@@ -1041,7 +1272,7 @@
         </div>
     </footer>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         class FlyingObject {
             constructor(container) {
                 this.container = container;
@@ -1303,7 +1534,46 @@
             radarVideo.addEventListener('pause', () => {
                 radarPlayBtn.style.opacity = '1';
             });
+            
+            radarWrapper.addEventListener('click', () => {
+                if (radarVideo.paused) {
+                    radarVideo.play();
+                } else {
+                    radarVideo.pause();
+                }
+            });
         }
+
+        // Ground system video
+        const groundVideo = document.getElementById('groundVideo');
+        const groundPlayBtn = document.getElementById('groundPlayBtn');
+        const groundWrapper = document.getElementById('groundVideoWrapper');
+
+        if(groundVideo && groundPlayBtn) {
+            groundVideo.addEventListener('play', () => {
+                groundPlayBtn.style.opacity = '0';
+            });
+            
+            groundVideo.addEventListener('pause', () => {
+                groundPlayBtn.style.opacity = '1';
+            });
+            
+            groundWrapper.addEventListener('click', () => {
+                if (groundVideo.paused) {
+                    groundVideo.play();
+                } else {
+                    groundVideo.pause();
+                }
+            });
+        }
+
+        // Animate ground features on scroll
+        document.querySelectorAll('.ground-feature').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
     </script>
 </body>
 </html>
