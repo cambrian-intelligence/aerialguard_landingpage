@@ -638,10 +638,6 @@
             box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
         }
 
-        .coming-soon-card.lang-es::before {
-            content: 'Hoja de Ruta';
-        }
-
         .coming-soon-title {
             font-size: 1.5rem;
             font-weight: 800;
@@ -967,78 +963,15 @@
         @media (max-width: 900px) and (min-width: 769px) {
             .ground-features-grid { grid-template-columns: 1fr 1fr; }
         }
-
-        /* --- LANGUAGE SELECTOR --- */
-        .lang-switcher {
-            position: fixed;
-            top: 1.25rem;
-            right: 1.25rem;
-            z-index: 9999;
-            display: flex;
-            background: rgba(15, 23, 42, 0.85);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            border-radius: 10px;
-            padding: 4px;
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
-        }
-
-        .lang-btn {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            padding: 7px 14px;
-            border: none;
-            border-radius: 7px;
-            background: transparent;
-            color: rgba(255, 255, 255, 0.5);
-            font-family: 'Inter', sans-serif;
-            font-size: 0.8rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.25s ease;
-            letter-spacing: 0.02em;
-        }
-
-        .lang-btn:hover {
-            color: rgba(255, 255, 255, 0.8);
-        }
-
-        .lang-btn.active {
-            background: rgba(59, 130, 246, 0.25);
-            color: #93c5fd;
-            box-shadow: 0 0 12px rgba(59, 130, 246, 0.15);
-        }
-
-        .lang-label {
-            color: rgba(255, 255, 255, 0.35);
-            font-family: 'Inter', sans-serif;
-            font-size: 0.7rem;
-            font-weight: 500;
-            letter-spacing: 0.04em;
-            padding: 0 8px 0 10px;
-            display: flex;
-            align-items: center;
-        }
     </style>
 </head>
 <body>
-    <div class="lang-switcher">
-        <span class="lang-label" id="langLabel">Idioma</span>
-        <button class="lang-btn" data-lang="en" onclick="setLanguage('en')">
-            EN
-        </button>
-        <button class="lang-btn" data-lang="es" onclick="setLanguage('es')">
-            ES
-        </button>
-    </div>
     <section class="hero">
         <div class="flying-objects-bg" id="flyingObjectsBg"></div>
         <div class="container">
             <div class="hero-content">
-                <h1 data-i18n="hero_title">Advanced Flying Objects Detection & Tracking</h1>
-                <p data-i18n="hero_subtitle">State-of-the-art machine intelligence algorithms for detecting and tracking flying objects with superhuman precision.</p>
+                <h1>Advanced Flying Objects Detection & Tracking</h1>
+                <p>State-of-the-art machine intelligence algorithms for detecting and tracking flying objects with superhuman precision.</p>
 
                 <div class="flying-objects-icons">
                     <div class="object-icon"><i class="fa-solid fa-dove"></i></div>
@@ -1077,23 +1010,23 @@
 
                 <div class="dual-systems">
                     <div class="system-card">
-                        <h3 data-i18n="system1_title">App-based onboard system</h3>
-                        <p data-i18n="system1_desc">Mobile app with multi-camera support, distance estimation, and real-time detection for aircraft-mounted systems.</p>
+                        <h3>App-based onboard system</h3>
+                        <p>Mobile app with multi-camera support, distance estimation, and real-time detection for aircraft-mounted systems.</p>
                         <div class="button-group">
                             <a href="https://apps.apple.com/es/app/aerial-guard/id6746328878" class="app-store-button" target="_blank" rel="noopener noreferrer">
                                 <img src="images/appstoreblack.svg" alt="Download on the App Store">
                             </a>
                             <a href="#demo" class="btn-action">
-                                <i class="fa-solid fa-play"></i> <span data-i18n="see_action">See it in action</span>
+                                <i class="fa-solid fa-play"></i> See it in action
                             </a>
                         </div>
                     </div>
                     <div class="system-card">
-                        <h3 data-i18n="system2_title">Ground-Based Camera System</h3>
-                        <p data-i18n="system2_desc">Strategic camera placement with 3D stereoscopic estimation and live dashboard for comprehensive area coverage.</p>
+                        <h3>Ground-Based Camera System</h3>
+                        <p>Strategic camera placement with 3D stereoscopic estimation and live dashboard for comprehensive area coverage.</p>
                         <div class="button-group">
                             <a href="#ground-demo" class="btn-action">
-                                <i class="fa-solid fa-play"></i> <span data-i18n="see_action2">See it in action</span>
+                                <i class="fa-solid fa-play"></i> See it in action
                             </a>
                         </div>
                     </div>
@@ -1107,10 +1040,10 @@
             <div class="ground-header">
                 <div class="ground-badge">
                     <i class="fa-solid fa-video"></i>
-                    <span data-i18n="ground_badge">Ground-Based System</span>
+                    Ground-Based System
                 </div>
-                <h2 data-i18n="ground_title">Passive 3D Positioning<br>Through Stereo Vision</h2>
-                <p data-i18n="ground_desc">By combining strategically placed cameras with our detection algorithms, we estimate the three-dimensional position of every detected object in real time — without radar or any active sensor.</p>
+                <h2>Passive 3D Positioning<br>Through Stereo Vision</h2>
+                <p>By combining strategically placed cameras with our detection algorithms, we estimate the three-dimensional position of every detected object in real time — without radar or any active sensor.</p>
             </div>
 
             <div class="ground-video-showcase">
@@ -1125,7 +1058,7 @@
                         </div>
                     </div>
                 </div>
-                <p class="ground-video-caption" data-i18n="ground_video_caption">An aircraft during takeoff with a bird nearby — 3D positions rendered in real time. <span style="color: #34d399; font-weight: 600;">Aircraft in green</span>, <span style="color: #f87171; font-weight: 600;">birds in red</span>.</p>
+                <p class="ground-video-caption">An aircraft during takeoff with a bird nearby — 3D positions rendered in real time. <span style="color: #34d399; font-weight: 600;">Aircraft in green</span>, <span style="color: #f87171; font-weight: 600;">birds in red</span>.</p>
             </div>
 
             <div class="ground-features-grid">
@@ -1133,34 +1066,34 @@
                     <div class="ground-feature-icon">
                         <i class="fa-solid fa-cube"></i>
                     </div>
-                    <h4 data-i18n="gf1_title">Passive 3D Tracking</h4>
-                    <p data-i18n="gf1_desc">Full three-dimensional positioning using only optical input. No radar, no emitters — entirely passive stereo vision.</p>
+                    <h4>Passive 3D Tracking</h4>
+                    <p>Full three-dimensional positioning using only optical input. No radar, no emitters — entirely passive stereo vision.</p>
                 </div>
                 <div class="ground-feature">
                     <div class="ground-feature-icon">
                         <i class="fa-solid fa-tower-broadcast"></i>
                     </div>
-                    <h4 data-i18n="gf2_title">Airspace Monitoring</h4>
-                    <p data-i18n="gf2_desc">Continuous situational awareness around airports, military installations, or critical infrastructure in real time.</p>
+                    <h4>Airspace Monitoring</h4>
+                    <p>Continuous situational awareness around airports, military installations, or critical infrastructure in real time.</p>
                 </div>
                 <div class="ground-feature">
                     <div class="ground-feature-icon">
                         <i class="fa-solid fa-clock-rotate-left"></i>
                     </div>
-                    <h4 data-i18n="gf3_title">Forensic Analysis</h4>
-                    <p data-i18n="gf3_desc">Review recorded events over any time window to detect risk situations, reconstruct incidents, and study prevention strategies.</p>
+                    <h4>Forensic Analysis</h4>
+                    <p>Review recorded events over any time window to detect risk situations, reconstruct incidents, and study prevention strategies.</p>
                 </div>
             </div>
 
             <div class="ground-dashboard-showcase">
                 <div class="ground-dashboard-label">
                     <i class="fa-solid fa-desktop"></i>
-                    <span data-i18n="dashboard_label">Event Visualization Software</span>
+                    Event Visualization Software
                 </div>
                 <div class="ground-dashboard-frame">
                     <img src="./images/dashboard.png" alt="Aerial Guard event visualization dashboard — real-time and historical analysis">
                 </div>
-                <p class="ground-dashboard-caption" data-i18n="dashboard_caption">Real-time monitoring and historical event analysis in a single interface.</p>
+                <p class="ground-dashboard-caption">Real-time monitoring and historical event analysis in a single interface.</p>
             </div>
 
         </div>
@@ -1169,22 +1102,22 @@
     <section class="demo-section" id="demo">
         <div class="container">
             <div class="demo-content">
-                <h2 class="section-title" data-i18n="demo_title">Onboard version in action</h2>
+                <h2 class="section-title">Onboard version in action</h2>
                 
                 <div class="demo-intro-block">
                     <div class="demo-feature-pill">
                         <i class="fa-solid fa-shield-halved demo-pill-icon"></i>
-                        <p class="demo-pill-text" data-i18n="pill1">Get early warnings for bird hazards effortlessly.</p>
+                        <p class="demo-pill-text">Get early warnings for bird hazards effortlessly.</p>
                     </div>
                     
                     <div class="demo-feature-pill">
                         <i class="fa-solid fa-infinity demo-pill-icon"></i>
-                        <p class="demo-pill-text" data-i18n="pill2">Run continuously or use on-demand when collision risk is higher.</p>
+                        <p class="demo-pill-text">Run continuously or use on-demand when collision risk is higher.</p>
                     </div>
 
                     <div class="demo-feature-pill">
                         <i class="fa-solid fa-eye demo-pill-icon"></i>
-                        <p class="demo-pill-text" data-i18n="pill3">A dedicated digital copilot with superhuman vision.</p>
+                        <p class="demo-pill-text">A dedicated digital copilot with superhuman vision.</p>
                     </div>
                 </div>
 
@@ -1192,16 +1125,16 @@
                     <div class="setup-images">
                         <div class="setup-img-card">
                             <img src="./images/image1.jpg" alt="Mobile phone mounted on windshield">
-                            <p class="setup-img-caption" data-i18n="setup1">Setup in cockpit</p>
+                            <p class="setup-img-caption">Setup in cockpit</p>
                         </div>
                         <div class="setup-img-card">
                             <img src="./images/image2.jpg" alt="Standard suction mount">
-                            <p class="setup-img-caption" data-i18n="setup2_html">Standard mount like <a href="https://www.amazon.com/Windshield-Universal-Dashboard-Suction-Compatible/dp/B06ZZWYQF7/" target="_blank">this one.</a></p>
+                            <p class="setup-img-caption">Standard mount like <a href="https://www.amazon.com/Windshield-Universal-Dashboard-Suction-Compatible/dp/B06ZZWYQF7/" target="_blank">this one.</a></p>
                         </div>
                     </div>
                 </div>
 
-                <div class="demo-subtitle" data-i18n="demo_subtitle_html">
+                <div class="demo-subtitle">
                     The <strong>top camera is the telephoto lens</strong> and the <strong>bottom is the main one</strong>, synchronized.
                 </div>
 
@@ -1213,7 +1146,7 @@
                                 Your browser does not support the video tag.
                             </video>
                         </div>
-                        <div class="video-desc" data-i18n="vid1">
+                        <div class="video-desc">
                             Bird captured first on main camera, then entering telephoto cone upon turning.
                         </div>
                     </div>
@@ -1225,7 +1158,7 @@
                                 Your browser does not support the video tag.
                             </video>
                         </div>
-                        <div class="video-desc" data-i18n="vid2">
+                        <div class="video-desc">
                             Takeoff with mainly long-distance detections.
                         </div>
                     </div>
@@ -1237,7 +1170,7 @@
                                 Your browser does not support the video tag.
                             </video>
                         </div>
-                        <div class="video-desc" data-i18n="vid3">
+                        <div class="video-desc">
                             Detections facing the sun.
                         </div>
                     </div>
@@ -1249,14 +1182,14 @@
                                 Your browser does not support the video tag.
                             </video>
                         </div>
-                        <div class="video-desc" data-i18n="vid4">
+                        <div class="video-desc">
                             Long-distance aircraft tracking.
                         </div>
                     </div>
                 </div>
 
                 <div class="landscape-demo">
-                    <h3 data-i18n="radar_title">Radar view display</h3>
+                    <h3>Radar view display</h3>
                     <div class="landscape-video-wrapper" id="radarVideoWrapper">
                         <video controls id="radarVideo">
                             <source src="./videos/video5.mp4" type="video/mp4">
@@ -1269,11 +1202,11 @@
                 </div>
 
                 <div class="coming-soon-card">
-                    <h3 class="coming-soon-title" data-i18n="coming_soon">Coming soon</h3>
+                    <h3 class="coming-soon-title">Coming soon</h3>
                     <ul class="coming-soon-list">
-                        <li><i class="fa-solid fa-camera"></i> <span data-i18n="cs1">External camera support</span></li>
-                        <li><i class="fa-brands fa-apple"></i> <span data-i18n="cs2">iPad support</span></li>
-                        <li><i class="fa-solid fa-map-location-dot"></i> <span data-i18n="cs3">Integration with Skydemon and other apps</span></li>
+                        <li><i class="fa-solid fa-camera"></i> External camera support</li>
+                        <li><i class="fa-brands fa-apple"></i> iPad support</li>
+                        <li><i class="fa-solid fa-map-location-dot"></i> Integration with Skydemon and other apps</li>
                     </ul>
                 </div>
 
@@ -1283,7 +1216,7 @@
 
     <section class="features" id="features">
         <div class="container">
-            <h2 class="section-title" data-i18n="features_title">Comprehensive Detection Capabilities</h2>
+            <h2 class="section-title">Comprehensive Detection Capabilities</h2>
             
             <div class="features-grid">
                 <div class="feature-card">
@@ -1294,8 +1227,8 @@
                             <circle cx="18" cy="12" r="3"/>
                         </svg>
                     </div>
-                    <h3 data-i18n="fc1_title">Multi-Object Detection</h3>
-                    <p data-i18n="fc1_desc">Accurately identify and classify drones, birds, planes, military aircraft, missiles, bugs, and other flying objects in real-time.</p>
+                    <h3>Multi-Object Detection</h3>
+                    <p>Accurately identify and classify drones, birds, planes, military aircraft, missiles, bugs, and other flying objects in real-time.</p>
                 </div>
                 
                 <div class="feature-card">
@@ -1306,8 +1239,8 @@
                             <path d="m2 12 10 5 10-5"/>
                         </svg>
                     </div>
-                    <h3 data-i18n="fc2_title">3D Position Estimation</h3>
-                    <p data-i18n="fc2_desc">Advanced stereoscopic algorithms provide precise 3D positioning and distance measurements for tracked objects.</p>
+                    <h3>3D Position Estimation</h3>
+                    <p>Advanced stereoscopic algorithms provide precise 3D positioning and distance measurements for tracked objects.</p>
                 </div>
                 
                 <div class="feature-card">
@@ -1318,8 +1251,8 @@
                             <path d="M16.5 4.125C16.5 3.50368 17.0037 3 17.625 3H19.875C20.4963 3 21 3.50368 21 4.125V19.875C21 20.4963 20.4963 21 19.875 21H17.625C17.0037 21 16.5 20.4963 16.5 19.875V4.125Z" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </div>
-                    <h3 data-i18n="fc3_title">Live Dashboard</h3>
-                    <p data-i18n="fc3_desc">Real-time monitoring with comprehensive analytics, bird density maps, and historical trend analysis.</p>
+                    <h3>Live Dashboard</h3>
+                    <p>Real-time monitoring with comprehensive analytics, bird density maps, and historical trend analysis.</p>
                 </div>
                 
                 <div class="feature-card">
@@ -1332,8 +1265,8 @@
                             <line x1="10" y1="16" x2="14" y2="16"/>
                         </svg>
                     </div>
-                    <h3 data-i18n="fc4_title">Airport Integration</h3>
-                    <p data-i18n="fc4_desc">Specialized solutions for airport environments with runway monitoring, collision prediction, and zone-based alerts.</p>
+                    <h3>Airport Integration</h3>
+                    <p>Specialized solutions for airport environments with runway monitoring, collision prediction, and zone-based alerts.</p>
                 </div>
                 
                 <div class="feature-card">
@@ -1343,8 +1276,8 @@
                             <path d="m9 9 2 2 4-4"/>
                         </svg>
                     </div>
-                    <h3 data-i18n="fc5_title">Mobile Application</h3>
-                    <p data-i18n="fc5_desc">iOS app for onboard systems with superhuman vision capabilities and multi-camera support.</p>
+                    <h3>Mobile Application</h3>
+                    <p>iOS app for onboard systems with superhuman vision capabilities and multi-camera support.</p>
                 </div>
                 
                 <div class="feature-card">
@@ -1353,8 +1286,8 @@
                             <path d="M9 17.25V18.2574C9 19.053 8.68393 19.8161 8.12132 20.3787L7.5 21H16.5L15.8787 20.3787C15.3161 19.8161 15 19.053 15 18.2574V17.25M21 5.25V15C21 16.2426 19.9926 17.25 18.75 17.25H5.25C4.00736 17.25 3 16.2426 3 15V5.25M21 5.25C21 4.00736 19.9926 3 18.75 3H5.25C4.00736 3 4.00736 3 5.25M21 5.25V12C21 13.2426 19.9926 14.25 18.75 14.25H5.25C4.00736 14.25 3 13.2426 3 12V5.25" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </div>
-                    <h3 data-i18n="fc6_title">Simulation Tools</h3>
-                    <p data-i18n="fc6_desc">Advanced simulation capabilities for testing and optimizing camera placement strategies for any environment.</p>
+                    <h3>Simulation Tools</h3>
+                    <p>Advanced simulation capabilities for testing and optimizing camera placement strategies for any environment.</p>
                 </div>
             </div>
         </div>
@@ -1364,37 +1297,37 @@
         <div class="container">
             <div class="capabilities-content">
                 <div class="capabilities-text">
-                    <h2 data-i18n="cap_title">Cutting-Edge Technology</h2>
-                    <p data-i18n="cap_desc">Our system combines state-of-the-art machine learning with practical deployment solutions for maximum effectiveness.</p>
+                    <h2>Cutting-Edge Technology</h2>
+                    <p>Our system combines state-of-the-art machine learning with practical deployment solutions for maximum effectiveness.</p>
                     
                     <ul class="capability-list">
-                        <li data-i18n="cap1">Superhuman vision detection accuracy</li>
-                        <li data-i18n="cap2">Real-time object tracking and classification</li>
-                        <li data-i18n="cap3">Multi-camera synchronization</li>
-                        <li data-i18n="cap4">Collision trajectory analysis</li>
-                        <li data-i18n="cap5">Strategic camera placement optimization</li>
-                        <li data-i18n="cap6">Customizable alert systems</li>
-                        <li data-i18n="cap7">Data export and integration capabilities</li>
-                        <li data-i18n="cap8">Worldwide deployment support</li>
+                        <li>Superhuman vision detection accuracy</li>
+                        <li>Real-time object tracking and classification</li>
+                        <li>Multi-camera synchronization</li>
+                        <li>Collision trajectory analysis</li>
+                        <li>Strategic camera placement optimization</li>
+                        <li>Customizable alert systems</li>
+                        <li>Data export and integration capabilities</li>
+                        <li>Worldwide deployment support</li>
                     </ul>
                 </div>
                 
                 <div class="capabilities-visual">
                     <div style="background: rgba(255,255,255,0.1); border-radius: 20px; padding: 3rem; text-align: center;">
-                        <h3 style="margin-bottom: 2rem; font-size: 1.5rem;" data-i18n="arch_title">System Architecture</h3>
+                        <h3 style="margin-bottom: 2rem; font-size: 1.5rem;">System Architecture</h3>
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem;">
                             <div style="background: rgba(59, 130, 246, 0.2); padding: 1rem; border-radius: 10px;">
-                                <strong data-i18n="arch_ground">Ground System</strong><br>
-                                <span data-i18n="arch_ground_desc">Fixed camera networks</span>
+                                <strong>Ground System</strong><br>
+                                Fixed camera networks
                             </div>
                             <div style="background: rgba(16, 185, 129, 0.2); padding: 1rem; border-radius: 10px;">
-                                <strong data-i18n="arch_onboard">Onboard System</strong><br>
-                                <span data-i18n="arch_onboard_desc">Mobile detection platform</span>
+                                <strong>Onboard System</strong><br>
+                                Mobile detection platform
                             </div>
                         </div>
                         <div style="background: rgba(245, 158, 11, 0.2); padding: 1rem; border-radius: 10px;">
-                            <strong data-i18n="arch_ai">AI Processing Engine</strong><br>
-                            <span data-i18n="arch_ai_desc">Machine learning algorithms</span>
+                            <strong>AI Processing Engine</strong><br>
+                            Machine learning algorithms
                         </div>
                     </div>
                 </div>
@@ -1404,22 +1337,22 @@
 
     <section class="contact" id="contact">
         <div class="container">
-            <h2 data-i18n="contact_title">Ready to Deploy Advanced Detection?</h2>
-            <p data-i18n="contact_desc">Get in touch to explore options. We'll study your case and provide a preliminary analysis.</p>
+            <h2>Ready to Deploy Advanced Detection?</h2>
+            <p>Get in touch to explore options. We'll study your case and provide a preliminary analysis.</p>
             
             <div class="contact-info">
                 <div class="contact-card">
-                    <h3 data-i18n="contact_general">General Inquiries</h3>
+                    <h3>General Inquiries</h3>
                     <p>Cambrian Intelligence SL</p>
                     <a href="/cdn-cgi/l/email-protection#6008050c0c0f2003010d021209010e090e14050c0c0907050e03054e030f0d">hello AT cambrianintelligence DOT com</a><br>
-                    <a href="https://cambrianintelligence.com" data-i18n="contact_website">Visit Our Website</a><br>
-                    <a href="https://www.linkedin.com/in/cristobalesteban/" data-i18n="contact_ceo">CEO LinkedIn Profile</a>
+                    <a href="https://cambrianintelligence.com">Visit Our Website</a><br>
+                    <a href="https://www.linkedin.com/in/cristobalesteban/">CEO LinkedIn Profile</a>
                 </div>
 
                 <div class="contact-card">
-                    <h3 data-i18n="contact_follow">Follow Us</h3>
-                    <p data-i18n="contact_follow_desc">Stay updated with our latest developments</p>
-                    <a href="https://www.linkedin.com/company/cambrian-intelligence/about/" data-i18n="contact_linkedin">Company LinkedIn</a>
+                    <h3>Follow Us</h3>
+                    <p>Stay updated with our latest developments</p>
+                    <a href="https://www.linkedin.com/company/cambrian-intelligence/about/">Company LinkedIn</a>
                 </div>
             </div>
         </div>
@@ -1429,157 +1362,20 @@
         <div class="container">
             <p style="margin-bottom: 1rem;">© 2025 Cambrian Intelligence SL (CIF: B87788097). All rights reserved.</p>
             <p style="font-size: 0.9rem; opacity: 0.8;">
-                <a href="disclaimer.txt" style="color: #60a5fa; text-decoration: none;" target="_blank" data-i18n="footer_legal">Legal Disclaimer & Important Notice</a> |
-                <span style="color: #60a5fa;" data-i18n="footer_proto">Prototype Version - Please Review Limitations</span>
+                <a href="disclaimer.txt" style="color: #60a5fa; text-decoration: none;" target="_blank">Legal Disclaimer & Important Notice</a> |
+                <span style="color: #60a5fa;">Prototype Version - Please Review Limitations</span>
             </p>
         </div>
     </footer>
 
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-        // ─── i18n Translation System ───
-        const translations = {
-            es: {
-                hero_title: 'Detección y Seguimiento Avanzado de Objetos Voladores',
-                hero_subtitle: 'Algoritmos de inteligencia artificial de última generación para detectar y rastrear objetos voladores con precisión sobrehumana.',
-                system1_title: 'Sistema embarcado basado en app',
-                system1_desc: 'App móvil con soporte multicámara, estimación de distancia y detección en tiempo real para sistemas montados en aeronaves.',
-                see_action: 'Ver en acción',
-                see_action2: 'Ver en acción',
-                system2_title: 'Sistema de Cámaras en Tierra',
-                system2_desc: 'Ubicación estratégica de cámaras con estimación estereoscópica 3D y panel de control en vivo para cobertura completa del área.',
-                ground_badge: 'Sistema en Tierra',
-                ground_title: 'Posicionamiento 3D Pasivo<br>Mediante Visión Estéreo',
-                ground_desc: 'Combinando cámaras estratégicamente ubicadas con nuestros algoritmos de detección, estimamos la posición tridimensional de cada objeto detectado en tiempo real — sin radar ni ningún sensor activo.',
-                ground_video_caption: 'Una aeronave durante el despegue con un pájaro cercano — posiciones 3D renderizadas en tiempo real. <span style="color: #34d399; font-weight: 600;">Aeronaves en verde</span>, <span style="color: #f87171; font-weight: 600;">pájaros en rojo</span>.',
-                gf1_title: 'Seguimiento 3D Pasivo',
-                gf1_desc: 'Posicionamiento tridimensional completo usando únicamente entrada óptica. Sin radar, sin emisores — visión estéreo totalmente pasiva.',
-                gf2_title: 'Monitorización del Espacio Aéreo',
-                gf2_desc: 'Conciencia situacional continua alrededor de aeropuertos, instalaciones militares o infraestructuras críticas en tiempo real.',
-                gf3_title: 'Análisis Forense',
-                gf3_desc: 'Revisión de eventos grabados en cualquier ventana temporal para detectar situaciones de riesgo, reconstruir incidentes y estudiar estrategias de prevención.',
-                dashboard_label: 'Software de Visualización de Eventos',
-                dashboard_caption: 'Monitorización en tiempo real y análisis histórico de eventos en una única interfaz.',
-                demo_title: 'Versión embarcada en acción',
-                pill1: 'Recibe alertas tempranas de riesgo de aves sin esfuerzo.',
-                pill2: 'Funciona continuamente o bajo demanda cuando el riesgo de colisión es mayor.',
-                pill3: 'Un copiloto digital dedicado con visión sobrehumana.',
-                setup1: 'Instalación en cabina',
-                setup2_html: 'Soporte estándar como <a href="https://www.amazon.com/Windshield-Universal-Dashboard-Suction-Compatible/dp/B06ZZWYQF7/" target="_blank">este.</a>',
-                demo_subtitle_html: 'La <strong>cámara superior es el teleobjetivo</strong> y la <strong>inferior es la principal</strong>, sincronizadas.',
-                vid1: 'Pájaro capturado primero en la cámara principal, entrando después en el cono del teleobjetivo al girar.',
-                vid2: 'Despegue con detecciones principalmente a larga distancia.',
-                vid3: 'Detecciones de cara al sol.',
-                vid4: 'Seguimiento de aeronaves a larga distancia.',
-                radar_title: 'Vista tipo radar',
-                coming_soon: 'Próximamente',
-                cs1: 'Soporte para cámara externa',
-                cs2: 'Soporte para iPad',
-                cs3: 'Integración con Skydemon y otras apps',
-                features_title: 'Capacidades de Detección Integrales',
-                fc1_title: 'Detección Multiobjetivo',
-                fc1_desc: 'Identificación y clasificación precisa de drones, pájaros, aviones, aeronaves militares, misiles, insectos y otros objetos voladores en tiempo real.',
-                fc2_title: 'Estimación de Posición 3D',
-                fc2_desc: 'Algoritmos estereoscópicos avanzados que proporcionan posicionamiento 3D preciso y mediciones de distancia para los objetos rastreados.',
-                fc3_title: 'Panel de Control en Vivo',
-                fc3_desc: 'Monitorización en tiempo real con analíticas completas, mapas de densidad de aves y análisis de tendencias históricas.',
-                fc4_title: 'Integración Aeroportuaria',
-                fc4_desc: 'Soluciones especializadas para entornos aeroportuarios con monitorización de pistas, predicción de colisiones y alertas por zonas.',
-                fc5_title: 'Aplicación Móvil',
-                fc5_desc: 'App iOS para sistemas embarcados con capacidades de visión sobrehumana y soporte multicámara.',
-                fc6_title: 'Herramientas de Simulación',
-                fc6_desc: 'Capacidades avanzadas de simulación para probar y optimizar estrategias de colocación de cámaras en cualquier entorno.',
-                cap_title: 'Tecnología de Vanguardia',
-                cap_desc: 'Nuestro sistema combina aprendizaje automático de última generación con soluciones de despliegue prácticas para la máxima efectividad.',
-                cap1: 'Precisión de detección con visión sobrehumana',
-                cap2: 'Seguimiento y clasificación de objetos en tiempo real',
-                cap3: 'Sincronización multicámara',
-                cap4: 'Análisis de trayectorias de colisión',
-                cap5: 'Optimización estratégica de ubicación de cámaras',
-                cap6: 'Sistemas de alerta personalizables',
-                cap7: 'Exportación de datos y capacidades de integración',
-                cap8: 'Soporte de despliegue mundial',
-                arch_title: 'Arquitectura del Sistema',
-                arch_ground: 'Sistema en Tierra',
-                arch_ground_desc: 'Redes de cámaras fijas',
-                arch_onboard: 'Sistema Embarcado',
-                arch_onboard_desc: 'Plataforma de detección móvil',
-                arch_ai: 'Motor de Procesamiento IA',
-                arch_ai_desc: 'Algoritmos de aprendizaje automático',
-                contact_title: '¿Listo para Implementar Detección Avanzada?',
-                contact_desc: 'Contáctanos para explorar opciones. Estudiaremos tu caso y proporcionaremos un análisis preliminar.',
-                contact_general: 'Consultas Generales',
-                contact_website: 'Visita Nuestra Web',
-                contact_ceo: 'LinkedIn del CEO',
-                contact_follow: 'Síguenos',
-                contact_follow_desc: 'Mantente al día con nuestros últimos desarrollos',
-                contact_linkedin: 'LinkedIn de la Empresa',
-                footer_legal: 'Aviso Legal y Nota Importante',
-                footer_proto: 'Versión Prototipo - Por favor revise las limitaciones',
-            }
-        };
-
-        // Store original English content
-        const englishContent = {};
-        let currentLang = 'en';
-
-        function initI18n() {
-            // Store original English innerHTML for all i18n elements
-            document.querySelectorAll('[data-i18n]').forEach(el => {
-                englishContent[el.getAttribute('data-i18n')] = el.innerHTML;
-            });
-        }
-
-        function setLanguage(lang) {
-            currentLang = lang;
-            document.documentElement.lang = lang;
-
-            // Update title
-            document.title = lang === 'es'
-                ? 'Sistema de Detección y Seguimiento de Objetos Voladores'
-                : 'Flying Objects Detection & Tracking System';
-
-            // Update Roadmap pseudo-element via CSS class
-            document.querySelector('.coming-soon-card').classList.toggle('lang-es', lang === 'es');
-
-            // Apply translations or restore English
-            document.querySelectorAll('[data-i18n]').forEach(el => {
-                const key = el.getAttribute('data-i18n');
-                if (lang === 'es' && translations.es[key]) {
-                    el.innerHTML = translations.es[key];
-                } else if (lang === 'en' && englishContent[key]) {
-                    el.innerHTML = englishContent[key];
-                }
-            });
-
-            // Update active button state
-            document.querySelectorAll('.lang-btn').forEach(btn => {
-                btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
-            });
-
-            // Update label: show the opposite language word
-            const labelEl = document.getElementById('langLabel');
-            if (labelEl) labelEl.textContent = lang === 'es' ? 'Language' : 'Idioma';
-        }
-
-        function detectLanguage() {
-            const browserLang = navigator.language || navigator.userLanguage || '';
-            return browserLang.toLowerCase().startsWith('es') ? 'es' : 'en';
-        }
-
-        // Initialize on DOM ready
-        document.addEventListener('DOMContentLoaded', () => {
-            initI18n();
-            setLanguage(detectLanguage());
-        });
-        // ─── End i18n ───
         class FlyingObject {
             constructor(container) {
                 this.container = container;
                 this.types = ['drone', 'bird', 'plane'];
-                this.labelsEn = ['Drone', 'Bird', 'Aircraft'];
-                this.labelsEs = ['Dron', 'Pájaro', 'Aeronave'];
+                this.labels = ['Drone', 'Bird', 'Aircraft'];
                 this.type = this.types[Math.floor(Math.random() * this.types.length)];
-                this.label = (currentLang === 'es' ? this.labelsEs : this.labelsEn)[this.types.indexOf(this.type)];
+                this.label = this.labels[this.types.indexOf(this.type)];
 
                 this.ranges = {
                     drone: {
