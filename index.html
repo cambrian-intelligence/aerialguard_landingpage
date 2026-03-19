@@ -947,7 +947,8 @@
                 0 0 60px -20px rgba(59, 130, 246, 0.12);
         }
 
-        .ground-dashboard-frame img {
+        .ground-dashboard-frame img,
+        .ground-dashboard-frame video {
             width: 100%;
             display: block;
         }
@@ -1161,6 +1162,21 @@
                     <img src="./images/dashboard.png" alt="Aerial Guard event visualization dashboard — real-time and historical analysis">
                 </div>
                 <p class="ground-dashboard-caption" data-i18n="dashboard_caption">Real-time monitoring and historical event analysis in a single interface.</p>
+
+                <div class="ground-dashboard-frame" style="margin-top: 2rem;">
+                    <video src="./videos/demo_airport_playback_3D.mp4" controls playsinline preload="metadata" aria-label="Aerial Guard 3D event playback"></video>
+                </div>
+                <p class="ground-dashboard-caption" data-i18n="demo_video_playback">3D event playback — review any tracked incident with full spatial context.</p>
+
+                <div class="ground-dashboard-frame" style="margin-top: 2rem;">
+                    <video src="./videos/demo_airport_live.mp4" controls playsinline preload="metadata" aria-label="Aerial Guard live monitoring"></video>
+                </div>
+                <p class="ground-dashboard-caption" data-i18n="demo_video_live">Live visualization — real-time detection, tracking, and alerting as events unfold.</p>
+
+                <div class="ground-dashboard-frame" style="margin-top: 2rem;">
+                    <video src="./videos/demo_airport_forensics.mp4" controls playsinline preload="metadata" aria-label="Aerial Guard forensic analysis"></video>
+                </div>
+                <p class="ground-dashboard-caption" data-i18n="demo_video_forensics">Forensic analysis — explore historical data, statistics, and patterns across any time window.</p>
             </div>
 
         </div>
@@ -1459,6 +1475,9 @@
                 gf3_desc: 'Revisión de eventos grabados en cualquier ventana temporal para detectar situaciones de riesgo, reconstruir incidentes y estudiar estrategias de prevención.',
                 dashboard_label: 'Software de Visualización de Eventos',
                 dashboard_caption: 'Monitorización en tiempo real y análisis histórico de eventos en una única interfaz.',
+                demo_video_playback: 'Reproducción 3D de eventos — revisión de cualquier incidente con contexto espacial completo.',
+                demo_video_live: 'Visualización en directo — detección, seguimiento y alertas en tiempo real.',
+                demo_video_forensics: 'Análisis forense — exploración de datos históricos, estadísticas y patrones en cualquier ventana temporal.',
                 demo_title: 'Versión embarcada en acción',
                 pill1: 'Recibe alertas tempranas de riesgo de aves sin esfuerzo.',
                 pill2: 'Funciona continuamente o bajo demanda cuando el riesgo de colisión es mayor.',
