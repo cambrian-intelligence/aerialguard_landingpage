@@ -1164,17 +1164,32 @@
                 <p class="ground-dashboard-caption" data-i18n="dashboard_caption">Real-time monitoring and historical event analysis in a single interface.</p>
 
                 <div class="ground-dashboard-frame" style="margin-top: 2rem;">
-                    <video src="./videos/demo_airport_playback_3D.mp4" controls playsinline preload="metadata" aria-label="Aerial Guard 3D event playback"></video>
+                    <div class="ground-video-inner dashboard-video-wrap">
+                        <video src="./videos/demo_airport_playback_3D.mp4" controls playsinline preload="metadata" aria-label="Aerial Guard 3D event playback"></video>
+                        <div class="ground-play-overlay dashboard-play-btn">
+                            <i class="fa-solid fa-play"></i>
+                        </div>
+                    </div>
                 </div>
                 <p class="ground-dashboard-caption" data-i18n="demo_video_playback">3D event playback — review any tracked incident with full spatial context.</p>
 
                 <div class="ground-dashboard-frame" style="margin-top: 2rem;">
-                    <video src="./videos/demo_airport_live.mp4" controls playsinline preload="metadata" aria-label="Aerial Guard live monitoring"></video>
+                    <div class="ground-video-inner dashboard-video-wrap">
+                        <video src="./videos/demo_airport_live.mp4" controls playsinline preload="metadata" aria-label="Aerial Guard live monitoring"></video>
+                        <div class="ground-play-overlay dashboard-play-btn">
+                            <i class="fa-solid fa-play"></i>
+                        </div>
+                    </div>
                 </div>
                 <p class="ground-dashboard-caption" data-i18n="demo_video_live">Live visualization — real-time detection, tracking, and alerting as events unfold.</p>
 
                 <div class="ground-dashboard-frame" style="margin-top: 2rem;">
-                    <video src="./videos/demo_airport_forensics.mp4" controls playsinline preload="metadata" aria-label="Aerial Guard forensic analysis"></video>
+                    <div class="ground-video-inner dashboard-video-wrap">
+                        <video src="./videos/demo_airport_forensics.mp4" controls playsinline preload="metadata" aria-label="Aerial Guard forensic analysis"></video>
+                        <div class="ground-play-overlay dashboard-play-btn">
+                            <i class="fa-solid fa-play"></i>
+                        </div>
+                    </div>
                 </div>
                 <p class="ground-dashboard-caption" data-i18n="demo_video_forensics">Forensic analysis — explore historical data, statistics, and patterns across any time window.</p>
             </div>
@@ -1883,6 +1898,16 @@
                 groundVideo.play();
             });
         }
+
+        // Dashboard demo videos
+        document.querySelectorAll('.dashboard-video-wrap').forEach(wrap => {
+            const vid = wrap.querySelector('video');
+            const btn = wrap.querySelector('.dashboard-play-btn');
+            if (!vid || !btn) return;
+            vid.addEventListener('play', () => { btn.style.opacity = '0'; btn.style.pointerEvents = 'none'; });
+            vid.addEventListener('pause', () => { btn.style.opacity = '1'; btn.style.pointerEvents = 'auto'; });
+            btn.addEventListener('click', (e) => { e.stopPropagation(); vid.play(); });
+        });
 
         // Animate ground features on scroll
         document.querySelectorAll('.ground-feature').forEach(el => {
