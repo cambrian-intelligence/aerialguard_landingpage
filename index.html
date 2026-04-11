@@ -915,25 +915,117 @@
         }
 
         .ground-dashboard-showcase {
-            max-width: 960px;
+            max-width: 1280px;
             margin: 3.5rem auto 0 auto;
             text-align: center;
         }
 
-        .ground-dashboard-label {
+        .ground-dashboard-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .ground-dashboard-badge {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            font-size: 0.85rem;
+            background: rgba(52, 211, 153, 0.1);
+            border: 1px solid rgba(52, 211, 153, 0.25);
+            padding: 0.5rem 1.25rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
             font-weight: 600;
-            color: rgba(255,255,255,0.5);
-            text-transform: uppercase;
+            color: #34d399;
             letter-spacing: 0.05em;
-            margin-bottom: 1.25rem;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
         }
 
-        .ground-dashboard-label i {
-            color: #60a5fa;
+        .ground-dashboard-header h3 {
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(180deg, #ffffff 0%, #6ee7b7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+
+        .ground-dashboard-header p {
+            font-size: 1.05rem;
+            color: rgba(255,255,255,0.6);
+            max-width: 650px;
+            margin: 0 auto;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        .ground-dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .ground-dashboard-card {
+            background: linear-gradient(160deg, rgba(52, 211, 153, 0.05) 0%, rgba(255,255,255,0.015) 100%);
+            border: 1px solid rgba(52, 211, 153, 0.12);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .ground-dashboard-card:hover {
+            border-color: rgba(52, 211, 153, 0.35);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.35), 0 0 40px rgba(52, 211, 153, 0.08);
+        }
+
+        .ground-dashboard-card-video {
+            position: relative;
+            background: #000;
+        }
+
+        .ground-dashboard-card-video video {
+            width: 100%;
+            display: block;
+        }
+
+        .ground-dashboard-card-video .ground-play-overlay {
+            background: rgba(52, 211, 153, 0.85);
+            box-shadow: 0 0 40px rgba(52, 211, 153, 0.4);
+            width: 72px;
+            height: 72px;
+            font-size: 22px;
+        }
+
+        .ground-dashboard-card-body {
+            padding: 1.5rem 1.75rem 1.75rem;
+        }
+
+        .ground-dashboard-card-icon {
+            width: 40px; height: 40px;
+            display: inline-flex; align-items: center; justify-content: center;
+            background: rgba(52, 211, 153, 0.12);
+            border: 1px solid rgba(52, 211, 153, 0.2);
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            color: #34d399;
+            font-size: 1rem;
+        }
+
+        .ground-dashboard-card-body h4 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 0.6rem;
+        }
+
+        .ground-dashboard-card-body p {
+            font-size: 0.92rem;
+            color: rgba(255,255,255,0.55);
+            line-height: 1.6;
         }
 
         .ground-dashboard-frame {
@@ -958,6 +1050,131 @@
             font-size: 0.95rem;
             color: rgba(255,255,255,0.5);
             line-height: 1.6;
+        }
+
+        @media (max-width: 1100px) {
+            .ground-dashboard-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 700px) {
+            .ground-dashboard-grid { grid-template-columns: 1fr; max-width: 500px; margin-left: auto; margin-right: auto; }
+        }
+
+        /* --- ADVANCED FEATURES UNDER DEVELOPMENT --- */
+        .advanced-dev {
+            max-width: 960px;
+            margin: 5rem auto 0 auto;
+        }
+
+        .advanced-dev-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .advanced-dev-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(168, 85, 247, 0.12);
+            border: 1px solid rgba(168, 85, 247, 0.25);
+            padding: 0.5rem 1.25rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #c084fc;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .advanced-dev-header h3 {
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(180deg, #ffffff 0%, #a5b4fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+
+        .advanced-dev-header p {
+            font-size: 1.05rem;
+            color: rgba(255,255,255,0.6);
+            max-width: 650px;
+            margin: 0 auto;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        .advanced-dev-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .advanced-dev-card {
+            background: linear-gradient(160deg, rgba(168, 85, 247, 0.06) 0%, rgba(255,255,255,0.015) 100%);
+            border: 1px solid rgba(168, 85, 247, 0.12);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .advanced-dev-card:hover {
+            border-color: rgba(168, 85, 247, 0.35);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.35), 0 0 40px rgba(168, 85, 247, 0.08);
+        }
+
+        .advanced-dev-card-video {
+            position: relative;
+            background: #000;
+        }
+
+        .advanced-dev-card-video video {
+            width: 100%;
+            display: block;
+        }
+
+        .advanced-dev-card-video .ground-play-overlay {
+            background: rgba(168, 85, 247, 0.85);
+            box-shadow: 0 0 40px rgba(168, 85, 247, 0.4);
+            width: 72px;
+            height: 72px;
+            font-size: 22px;
+        }
+
+        .advanced-dev-card-body {
+            padding: 1.5rem 1.75rem 1.75rem;
+        }
+
+        .advanced-dev-card-icon {
+            width: 40px; height: 40px;
+            display: inline-flex; align-items: center; justify-content: center;
+            background: rgba(168, 85, 247, 0.12);
+            border: 1px solid rgba(168, 85, 247, 0.2);
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            color: #c084fc;
+            font-size: 1rem;
+        }
+
+        .advanced-dev-card-body h4 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 0.6rem;
+        }
+
+        .advanced-dev-card-body p {
+            font-size: 0.92rem;
+            color: rgba(255,255,255,0.55);
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .advanced-dev-grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
         }
 
         @media (max-width: 768px) {
@@ -1154,44 +1371,124 @@
             </div>
 
             <div class="ground-dashboard-showcase">
-                <div class="ground-dashboard-label">
-                    <i class="fa-solid fa-desktop"></i>
-                    <span data-i18n="dashboard_label">Event Visualization Software</span>
+                <div class="ground-dashboard-header">
+                    <div class="ground-dashboard-badge">
+                        <i class="fa-solid fa-desktop"></i>
+                        <span data-i18n="dashboard_label">Event Visualization Software</span>
+                    </div>
+                    <h3 data-i18n="dashboard_title">Real-Time Monitoring<br>& Forensic Analysis</h3>
+                    <p data-i18n="dashboard_desc">A unified interface for live airspace monitoring, 3D event playback, and deep forensic investigation across any time window.</p>
                 </div>
-                <div class="ground-dashboard-frame">
+
+                <div class="ground-dashboard-frame" style="margin-bottom: 2.5rem;">
                     <img src="./images/dashboard.png" alt="Aerial Guard event visualization dashboard — real-time and historical analysis">
                 </div>
-                <p class="ground-dashboard-caption" data-i18n="dashboard_caption">Real-time monitoring and historical event analysis in a single interface.</p>
+                <p class="ground-dashboard-caption" style="margin-top: -1.5rem; margin-bottom: 2.5rem;" data-i18n="dashboard_caption">Real-time monitoring and historical event analysis in a single interface.</p>
 
-                <div class="ground-dashboard-frame" style="margin-top: 2rem;">
-                    <div class="ground-video-inner dashboard-video-wrap">
-                        <video src="./videos/demo_airport_playback_3D.mp4" controls playsinline preload="metadata" aria-label="Aerial Guard 3D event playback"></video>
-                        <div class="ground-play-overlay dashboard-play-btn">
-                            <i class="fa-solid fa-play"></i>
+                <div class="ground-dashboard-grid">
+                    <div class="ground-dashboard-card">
+                        <div class="ground-dashboard-card-video">
+                            <div class="ground-video-inner dashboard-video-wrap">
+                                <video src="./videos/demo_airport_playback_3D.mp4" controls playsinline preload="metadata" aria-label="Aerial Guard 3D event playback"></video>
+                                <div class="ground-play-overlay dashboard-play-btn">
+                                    <i class="fa-solid fa-play"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ground-dashboard-card-body">
+                            <div class="ground-dashboard-card-icon">
+                                <i class="fa-solid fa-cube"></i>
+                            </div>
+                            <h4 data-i18n="dash_playback_title">3D Event Playback</h4>
+                            <p data-i18n="demo_video_playback">3D event playback — review any tracked incident with full spatial context.</p>
+                        </div>
+                    </div>
+
+                    <div class="ground-dashboard-card">
+                        <div class="ground-dashboard-card-video">
+                            <div class="ground-video-inner dashboard-video-wrap">
+                                <video src="./videos/demo_airport_live.mp4" controls playsinline preload="metadata" aria-label="Aerial Guard live monitoring"></video>
+                                <div class="ground-play-overlay dashboard-play-btn">
+                                    <i class="fa-solid fa-play"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ground-dashboard-card-body">
+                            <div class="ground-dashboard-card-icon">
+                                <i class="fa-solid fa-satellite-dish"></i>
+                            </div>
+                            <h4 data-i18n="dash_live_title">Live Monitoring</h4>
+                            <p data-i18n="demo_video_live">Live visualization — real-time detection, tracking, and alerting as events unfold.</p>
+                        </div>
+                    </div>
+
+                    <div class="ground-dashboard-card">
+                        <div class="ground-dashboard-card-video">
+                            <div class="ground-video-inner dashboard-video-wrap">
+                                <video src="./videos/demo_airport_forensics.mp4" controls playsinline preload="metadata" aria-label="Aerial Guard forensic analysis"></video>
+                                <div class="ground-play-overlay dashboard-play-btn">
+                                    <i class="fa-solid fa-play"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ground-dashboard-card-body">
+                            <div class="ground-dashboard-card-icon">
+                                <i class="fa-solid fa-magnifying-glass-chart"></i>
+                            </div>
+                            <h4 data-i18n="dash_forensics_title">Forensic Analysis</h4>
+                            <p data-i18n="demo_video_forensics">Forensic analysis — explore historical data, statistics, and patterns across any time window.</p>
                         </div>
                     </div>
                 </div>
-                <p class="ground-dashboard-caption" data-i18n="demo_video_playback">3D event playback — review any tracked incident with full spatial context.</p>
+            </div>
 
-                <div class="ground-dashboard-frame" style="margin-top: 2rem;">
-                    <div class="ground-video-inner dashboard-video-wrap">
-                        <video src="./videos/demo_airport_live.mp4" controls playsinline preload="metadata" aria-label="Aerial Guard live monitoring"></video>
-                        <div class="ground-play-overlay dashboard-play-btn">
-                            <i class="fa-solid fa-play"></i>
+            <div class="advanced-dev">
+                <div class="advanced-dev-header">
+                    <div class="advanced-dev-badge">
+                        <i class="fa-solid fa-flask"></i>
+                        <span data-i18n="adv_badge">Advanced Features Under Development</span>
+                    </div>
+                    <h3 data-i18n="adv_title">Expanding Ground-Based<br>Capabilities</h3>
+                    <p data-i18n="adv_desc">Active R&D pushing the boundaries of passive optical surveillance — from mechanical auto-tracking to full night-sky awareness.</p>
+                </div>
+
+                <div class="advanced-dev-grid">
+                    <div class="advanced-dev-card">
+                        <div class="advanced-dev-card-video">
+                            <div class="ground-video-inner dashboard-video-wrap">
+                                <video src="./videos/camera_auto-follow.mp4" controls playsinline preload="metadata" aria-label="Camera auto-follow tracking demo"></video>
+                                <div class="ground-play-overlay dashboard-play-btn">
+                                    <i class="fa-solid fa-play"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="advanced-dev-card-body">
+                            <div class="advanced-dev-card-icon">
+                                <i class="fa-solid fa-arrows-rotate"></i>
+                            </div>
+                            <h4 data-i18n="adv_autofollow_title">Camera Auto-Follow</h4>
+                            <p data-i18n="adv_autofollow_desc">Mechanical camera tracking that automatically follows aerial objects in real time, keeping targets centered in the frame without operator intervention.</p>
+                        </div>
+                    </div>
+
+                    <div class="advanced-dev-card">
+                        <div class="advanced-dev-card-video">
+                            <div class="ground-video-inner dashboard-video-wrap">
+                                <video src="./videos/meteor_tagged.mp4" controls playsinline preload="metadata" aria-label="Night sky meteor detection demo"></video>
+                                <div class="ground-play-overlay dashboard-play-btn">
+                                    <i class="fa-solid fa-play"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="advanced-dev-card-body">
+                            <div class="advanced-dev-card-icon">
+                                <i class="fa-solid fa-meteor"></i>
+                            </div>
+                            <h4 data-i18n="adv_nightsky_title">Night Sky Awareness</h4>
+                            <p data-i18n="adv_nightsky_desc">Event detection in night conditions — identifying meteors, satellites, and other aerial phenomena with automatic tagging and classification.</p>
                         </div>
                     </div>
                 </div>
-                <p class="ground-dashboard-caption" data-i18n="demo_video_live">Live visualization — real-time detection, tracking, and alerting as events unfold.</p>
-
-                <div class="ground-dashboard-frame" style="margin-top: 2rem;">
-                    <div class="ground-video-inner dashboard-video-wrap">
-                        <video src="./videos/demo_airport_forensics.mp4" controls playsinline preload="metadata" aria-label="Aerial Guard forensic analysis"></video>
-                        <div class="ground-play-overlay dashboard-play-btn">
-                            <i class="fa-solid fa-play"></i>
-                        </div>
-                    </div>
-                </div>
-                <p class="ground-dashboard-caption" data-i18n="demo_video_forensics">Forensic analysis — explore historical data, statistics, and patterns across any time window.</p>
             </div>
 
         </div>
@@ -1489,10 +1786,22 @@
                 gf3_title: 'Análisis Forense',
                 gf3_desc: 'Revisión de eventos grabados en cualquier ventana temporal para detectar situaciones de riesgo, reconstruir incidentes y estudiar estrategias de prevención.',
                 dashboard_label: 'Software de Visualización de Eventos',
+                dashboard_title: 'Monitorización en Tiempo Real<br>y Análisis Forense',
+                dashboard_desc: 'Una interfaz unificada para la monitorización del espacio aéreo en vivo, reproducción 3D de eventos e investigación forense en cualquier ventana temporal.',
                 dashboard_caption: 'Monitorización en tiempo real y análisis histórico de eventos en una única interfaz.',
+                dash_playback_title: 'Reproducción 3D de Eventos',
+                dash_live_title: 'Monitorización en Vivo',
+                dash_forensics_title: 'Análisis Forense',
                 demo_video_playback: 'Reproducción 3D de eventos — revisión de cualquier incidente con contexto espacial completo.',
                 demo_video_live: 'Visualización en directo — detección, seguimiento y alertas en tiempo real.',
                 demo_video_forensics: 'Análisis forense — exploración de datos históricos, estadísticas y patrones en cualquier ventana temporal.',
+                adv_badge: 'Funcionalidades Avanzadas en Desarrollo',
+                adv_title: 'Ampliando las Capacidades<br>del Sistema en Tierra',
+                adv_desc: 'I+D activo llevando la vigilancia óptica pasiva más allá — desde auto-seguimiento mecánico hasta conciencia total del cielo nocturno.',
+                adv_autofollow_title: 'Auto-Seguimiento de Cámara',
+                adv_autofollow_desc: 'Seguimiento mecánico de cámara que sigue automáticamente objetos aéreos en tiempo real, manteniendo los objetivos centrados en el encuadre sin intervención del operador.',
+                adv_nightsky_title: 'Vigilancia del Cielo Nocturno',
+                adv_nightsky_desc: 'Detección de eventos en condiciones nocturnas — identificación de meteoros, satélites y otros fenómenos aéreos con etiquetado y clasificación automáticos.',
                 demo_title: 'Versión embarcada en acción',
                 pill1: 'Recibe alertas tempranas de riesgo de aves sin esfuerzo.',
                 pill2: 'Funciona continuamente o bajo demanda cuando el riesgo de colisión es mayor.',
